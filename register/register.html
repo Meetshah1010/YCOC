@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="register.css">
+  <script src="register.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+  <title>Registration</title>
+</head>
+
+<body>
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+
+    *:focus {
+      outline: none;
+    }
+
+
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #DE6262;
+      background: linear-gradient(to bottom, #FFB88C, #DE6262);
+
+      font-size: 16px;
+      color: #222;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+    }
+
+    .login-box {
+      position: relative;
+      top: 0px;
+      margin: 1% auto;
+      width: 1000px;
+      height: 700px;
+      background-color: #fff;
+    }
+
+    .left {
+      position: relative;
+      top: 8px;
+      left: 1px;
+      box-sizing: border-box;
+      padding: 10px;
+      width: 500px;
+      height: 290px;
+    }
+
+
+    .or {
+      position: absolute;
+      top: 330px;
+      left: 490px;
+      width: 50px;
+      height: 50px;
+      background: #000;
+      color: #fff;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      line-height: 50px;
+      text-align: center;
+    }
+
+    .right {
+      position: absolute;
+      top: 180px;
+      left: 550px;
+      box-sizing: border-box;
+      padding: 40px;
+      width: 450px;
+      height: 400px;
+
+      /*  background: url('https://goo.gl/YbktSj');
+*/
+      background-size: cover;
+      background-position: center;
+      font-weight: 20px;
+      border-radius: 0 4px 2px 0;
+    }
+
+    .right .loginwith {
+      display: block;
+      margin-bottom: 30px;
+      font-family: 'Cedarville Cursive', cursive;
+
+      font-size: 53px;
+      color: rgb(0, 0, 0);
+      text-align: center;
+    }
+
+    .divider-text {
+      position: relative;
+      text-align: center;
+      margin-top: 15px;
+      margin-bottom: 15px;
+
+    }
+
+    .divider-text span {
+      padding: 7px;
+      font-size: 12px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .divider-text:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      border-bottom: 1px solid #ddd;
+      top: 55%;
+      left: 0;
+      z-index: 1;
+    }
+
+    .btn-facebook {
+      background-color: #405D9D;
+      color: #fff;
+    }
+
+    .btn-google {
+      background-color: #42AEEC;
+      color: #fff;
+    }
+
+
+
+
+    .social {
+      height: 52px;
+      width: auto;
+      border: 10px black;
+
+    }
+
+    body {
+
+      background-image: url(../svg/chef2.svg);
+      background-repeat: no-repeat;
+
+    }
+
+    .login-box {
+      background-color: rgba(100, 100, 100, 0);
+      border: 20px solid rgba(0, 0, 0, 0); 
+      
+    }
+
+    /* .social:hover {
+      margin-bottom: 30px;
+      border-color: black;
+    } */
+  </style>
+>>>>>>> 551fc7c6f2ade6514744c5e859fcb176a2b5af96
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+ 
+  <div class="login-box">
+    <div class="left">
+      <article class="card-body mx-auto" style="max-width: 400px;">
+        <h4 class="card-title text-center">rate Account</h4>
+        <h6 style="color: red;">All fields are Required</h6>
+        <br>
+        <form action="register.php" method="POST">
+
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+            </div>
+            <input name="rname" id="rname" class="form-control" placeholder="Full name" required type="text" autocomplete="off">
+          </div> <!-- form-group// -->
+
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+            </div>
+            <input name="remail" id="remail" class="form-control" placeholder="Email address" required type="email">
+          </div> <!-- form-group// -->
+
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+            </div>
+            <input name="rmob" id="rmob" onchange="varifyMobile()" class="form-control" placeholder="Phone number"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              required type="number" maxlength="10" size="10">
+          </div> <!-- form-group// -->
+
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-map-marker" aria-hidden="true"></i> </span>
+            </div>
+            <input name="rlandmark" id="rlandmark" class="form-control" placeholder="Enter nearest landmark" required
+              type="text">
+          </div> <!-- form-group end.// -->
+
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
+            <input name="rpass" id="rpass" onchange="varifyPassword()" class="form-control"
+              placeholder="Create password" required type="password">
+          </div> <!-- form-group// -->
+
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
+            <input name="repass" id="repass" onchange="varifyPasswordmatching()" class="form-control" onchange=""
+              placeholder="Confirm Password" required type="password">
+            &nbsp;<br>
+            <h6 style="color: red;">Password should conatin 8 to 15 characters that should include at "least one
+              lowercase letter", "one uppercase letter", "one numeric digit" & "one special character"</h6>
+          </div> <!-- form-group// -->
+
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="">Show password</span>
+            </div>
+            <input class="ml-2 mt-1" type="checkbox" onclick="showPassword()">
+          </div>
+
+          <div class="form-group input-group">
+            <b><label class="checkbox-inline"><input onmousemove="varifyPassword(),varifyMobile()" type="checkbox"
+                  required> I accept all the
+                <a class="primary" href="#" data-toggle="modal" data-target="#exampleModal">T&C*</a></label></b>
+          </div>
+
+          <div class="form-group">
+            <button name="rsignup" type="submit" class="btn btn-primary btn-block disabled"> Create Account </button>
+          </div> <!-- form-group// -->
+        </form>
+        <!-- modal dialogbox -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Terms & Conditions</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                The terms we/us/our company individually and collectively refer to UENGAGE SERVICES PRIVATE LIMITED .
+                and the terms 'visitor '
+                'users' refers to users.
+                This page states the terms and conditions under which you (visitor) may visit this website. please read
+                this passage carefully . if you do not accept the t & c then we would request you to exit the sit.</br>
+                USE OF CONTENT : All logos , brands, marks handling , lables , name,signature, numerals, shapes or any
+                combinations thereof , appering in this site, except as otherwise noted are properties either owned or
+                used under licence, by the business and /or its associate entities who features onn the website.The use
+                of these properties of any other content on this site ,except as provided in these t & c or the site
+                content , is strictly prohibited .
+                you may not sell or modify the content of this website or reproduce , display,publicly perform ,
+                distribute , or otherwise use the materials in any way for any publiv or commercial purpose without the
+                respective organization's or entity 's written permission.</br>INDEMINTY: the user unilaterally agree to
+                indemnify and hold harmless , without objections , the company , its officers ,directors ,employeesand
+                agents from and against any claims ,actions and/or demands and /or liabilities and/or losses and/or
+                damages whatsoeverarising froom or resulting from their use of website or branch of the termss.
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="form-group input-group">
+
+          <!-- modal dialogbox -->
+          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+            </script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+            </script>
+
+      </article>
+    </div>
+
+    <div class="right">
+
+      <h4 class="loginwith">Sign in with</h4>
+      <p>
+
+        <a href="" class="btn btn-block"> <img class="social" src="../icons/Facebook 4.png" alt="facebook icon">
+          <facebook style="color: rgba(31, 84, 230, 0.829);">facebook</facebook>
+        </a>
+        <a href="" class="btn btn-block ">  <img class="social" src="../icons/instagram 4.png" alt="instagram icon">
+          <instagram style="color: rgba(233, 16, 186, 0.89);">instagram</i>
+        </a>
+        <a href="" class="btn btn-block ">  <img class="social" src="../icons/pinterest 4.png" alt="instagram icon">
+          <instagram style="color: rgba(228, 25, 76, 0.89);">pinterest</i>
+        </a>
+      <p class="text-center">Have an account? <a href="../index/index.html">Log In</a> </p>
+      </p>
+    </div>
+
+    <div class="or">OR</div>
+
+  </div> <!-- card.// -->
+
+  <!--container end.//-->
+</body>
+
+</html>

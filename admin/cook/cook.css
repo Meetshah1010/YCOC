@@ -1,0 +1,12 @@
+nav{
+    background-color: black;
+}
+.zoomA {
+    width: 50px;
+    height: 50px;
+    /* ease | ease-in | ease-out | linear */
+    transition: transform ease-in-out 0.3s;
+  }
+  .zoomA:hover {
+    transform: scale(3.5);
+  }

@@ -1,0 +1,148 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+
+*:focus {
+  outline: none;
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #DE6262;
+  background: linear-gradient(to bottom, #FFB88C, #DE6262);
+
+  font-size: 16px;
+  color: #222;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+.login-box {
+  position: relative;
+  top: 0px;
+  margin: 1% auto;
+  width: 1000px;
+  height: 700px;
+  background-color: #fff;
+  /*background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+*/
+
+  /*  background: #FFF;
+*/
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.left {
+  position: relative;
+  top: 8px;
+  left: 1px;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 500px;
+  height: 290px;
+}
+
+
+.or {
+  position: absolute;
+  top: 330px;
+  left: 490px;
+  width: 50px;
+  height: 50px;
+  background: #000;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  line-height: 50px;
+  text-align: center;
+}
+
+.right {
+  position: absolute;
+  top: 180px;
+  left: 550px;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 450px;
+  height: 400px;
+
+  /*  background: url('https://goo.gl/YbktSj');
+*/
+  background-size: cover;
+  background-position: center;
+  font-weight: 20px;
+  border-radius: 0 4px 2px 0;
+}
+
+.right .loginwith {
+  display: block;
+  margin-bottom: 30px;
+  font-family: 'Cedarville Cursive', cursive;
+
+  font-size: 53px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.divider-text {
+  position: relative;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+}
+
+.divider-text span {
+  padding: 7px;
+  font-size: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.divider-text:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  top: 55%;
+  left: 0;
+  z-index: 1;
+}
+
+.btn-facebook {
+  background-color: #405D9D;
+  color: #fff;
+}
+
+.btn-google {
+  background-color: #42AEEC;
+  color: #fff;
+}
+
+
+
+
+.social {
+  height: 52px;
+  width: auto;
+  border: 10px black;
+
+}
+
+body {
+
+  background-image: url(../svg/chef2.svg);
+  background-repeat: no-repeat;
+
+}
+
+.login-box {
+  background-color: rgba(100, 100, 100, 0); 
+}
+
+/* .social:hover {
+  margin-bottom: 30px;
+  border-color: black;
+} */

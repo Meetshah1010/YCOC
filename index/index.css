@@ -1,0 +1,28 @@
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+.login-block{
+    background: #DE6262;
+background: linear-gradient(to bottom, #FFB88C, #DE6262); 
+float:left;
+width:100%;
+padding : 50px 0;
+}
+.navbar{
+    background: #000;
+}
+.banner-sec{
+    opacity: 0.7;
+    border-radius: 0 10px 10px 0; 
+    padding:0;}
+.container{
+    background:#fff; 
+    border-radius: 10px; 
+    box-shadow:15px 20px 0px rgba(0,0,0,0.1);}
+.carousel-inner{
+    border-radius:0 10px 10px 0;}
+.login-sec{
+    padding: 50px 30px; 
+    position:relative;}
+.btn-login{
+    background: #DE6262; 
+    color:#fff; 
+    font-weight:600;}

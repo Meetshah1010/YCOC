@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>        
+        <link rel="stylesheet" href="index.css">
+        <script src="index.js"></script>
+    </head>
+    <body>
+      <!--navbar start-->
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="../landing/landing.html">YCOC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="../register/register.html">Register</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Log in</a>
+            </li>
+          </ul> 
+       </div>
+      </nav> 
+      <!--navbar end-->
+<section class="login-block">
+    <div class="container">
+	<div class="row">
+		<div class="col-md-4 login-sec">
+		    <h2 class="text-center">Login Now</h2>
+		    <form action="index.php" method="POST" class="login-form">
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+             </div>
+                <input name="remail" id="remail" placeholder="Enter a email address*" required class="form-control" type="email">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          </div>
+              <input name="rpass" id="rpass" placeholder="Enter a password*" required onchange="varifyPassword()" class="form-control" type="password">
+          </div> <!-- form-group// -->
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="">Show password</span>    
+            </div>
+            <input class="ml-2 mt-1" type="checkbox" onclick="showPassword()">
+            <a class="ml-2" href="../forgot_password/forgot_password.html">Forgot password !?</a>
+           </div>
+        <div class="form-check">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input">
+      <small>Remember Me</small>
+    </label>
+    <button type="submit" name="rlogin" class="btn btn-login float-right">Submit</button>
+  </div>
+  <h6 class="mt-3">New user ! <a href="../register/register.html"> Sign up </a>from here</h6>
+</form>
+		</div>
+		<div class="col-md-8 banner-sec">
+    
+      <img class="d-block img-fluid" src="../images/dish 1.jpg" >
+</section>
+    </body>
+</html>

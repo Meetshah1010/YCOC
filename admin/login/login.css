@@ -1,0 +1,27 @@
+/* body{
+    background-color: black;
+} */
+
+#box{
+   
+    margin: 200px;
+    
+}
+
+
+body{
+    background-image:url(../../svg/insert.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:contain;
+    width: 90%;
+}
+
+/* .box{
+    background-color: green;
+} */
+#up{
+    /* margin: 0px 50px 30px 0px;
+    margin-right: 500px; */
+    margin-bottom: 30px;
+}
