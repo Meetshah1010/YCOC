@@ -12,9 +12,14 @@
 body{
     background-image:url(../../svg/insert.svg);
     background-repeat: no-repeat;
-    background-position: center;
-    background-size:contain;
-    width: 90%;
+    /* background-position:center; */
+    /* background-size:contain; */
+    width: 70%;
+    /* background-size: auto;
+     */
+     /* background-origin: content-box; */
+     background-position: center;
+    background-size: contain;
 }
 
 /* .box{
