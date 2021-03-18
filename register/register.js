@@ -1,3 +1,9 @@
+const acc=document.querySelector('#rsignup');
+function removedisable(){
+
+    acc.classList.remove('disabled');
+}
+
 function varifyMobile()
 {   
     var rmob = document.getElementById("rmob").value;
@@ -51,3 +57,16 @@ function showPassword() {
           x.type = "password";
         }
         }
+
+        
+        let unblock=document.getElementById("rsignup");
+        console.log(unblock);
+        function addatt(){
+            console.log("hello world");
+            unblock.setAttribute("type","submit");
+
+
+        }
+
+
+    
