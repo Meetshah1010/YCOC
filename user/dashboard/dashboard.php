@@ -4,6 +4,9 @@ session_start();
 if(isset($_SESSION['is_userlogin']))
 {
     $remail = $_SESSION['remail'];
+    $sql = "SELECT * FROM register WHERE remail = '$remail'";
+    $result=$conn->query($sql);
+    $user = $result->fetch_assoc();
 }
 else
 {
@@ -27,8 +30,15 @@ else
     <link rel="stylesheet" href="dashboard.css">
     </head> 
     <body>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg" style="border: 1px solid;">
             <a class="navbar-brand" style="color:black;" href="../../landing/landing.html">YCOC</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                <?php
+                    echo '<a class="nav-link ml-1" href="#" style="color:black;"><b>'.$user['rname'].'</b></p>';
+                ?>
+                </li>
+            </ul>
           </nav>
     </body>
 </html>
