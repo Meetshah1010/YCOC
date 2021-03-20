@@ -36,11 +36,11 @@ if(isset($_REQUEST['aemail']))
 	<link rel="stylesheet" type="text/css" href="../../css/fontawesome.min.css">
 </head>
 <body>
-	<div class="align-middle col align-self-center"  id="box" >
-<div class="mt-5 my-5 text-center" style="font-size: 30px; margin-right:150px;>
+	<div class="align-middle col align-self-center"  id="box">
+<div class="mt-5 my-5 text-center" style="font-size: 30px; margin-right:-20px;>
 	<span id="up">Your choice our cook</span>
 </div>
-<p style="text-align: center;font-size: 20px;margin-top: 10px;"><img style="margin-right: 20px;" src="https://img.icons8.com/material-sharp/24/000000/insurance-agent.png"/>Admin Log in area</p>
+<p style="text-align: center;font-size: 20px;margin-top: 10px;"><img style="margin-right:20px;" src="https://img.icons8.com/material-sharp/24/000000/insurance-agent.png"/>Admin Log in area</p>
 <div class="container-fluid">
 	<div class="row justify-content-center">
 		<div class="col-sm-6 col-md-4">

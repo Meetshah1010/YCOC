@@ -11,7 +11,7 @@ if(isset($_REQUEST['rlogin']))
         session_start();
         $_SESSION['remail']=$_POST['remail'];
         $_SESSION['rpass']=$_POST['rpass'];
-        echo "<script>location.href='../profile.php';</script>";
+        echo "<script>location.href='../user/profile/profile.php';</script>";
     }
     else
     {

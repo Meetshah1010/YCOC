@@ -55,10 +55,10 @@ if(isset($_POST['rsignin']))
 	<div class="form-container sign-in-container">
 		<form action="" method="POST">
 			<h1>Sign in</h1>
-			<input type="email" name="remail" placeholder="Email" required/>
+			<input type="email" class="my-3" name="remail" placeholder="Email" required/>
       <input type="password" name="rpassword" placeholder="Password" required/>
 			<a href="#">Forgot your password?</a>
-			<button type="submit" name="rsignin">Sign In</button>
+			<button type="submit" name="rsignin" style="border-radius:20px">Sign In</button>
 		</form>
 	</div>
 	<div class="overlay-container">
