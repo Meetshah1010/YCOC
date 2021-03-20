@@ -1,20 +1,20 @@
 <?php
 include('../../connection.php');
 session_start();
-if(isset($_SESSION['is_adminlogin']))
+if(isset($_SESSION['is_userlogin']))
 {
     $remail = $_SESSION['remail'];
 }
 else
 {
-    echo "<script> location.href='../index/index.php'</script>";
+    echo "<script> location.href='../login/login.html'</script>";
 }
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <title>
-            admin
+            YCOC
         </title>
         <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,7 +28,7 @@ else
     </head> 
     <body>
         <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" style="color:white;" href="../../landing/landing.html">YCOC</a>
+            <a class="navbar-brand" style="color:black;" href="../../landing/landing.html">YCOC</a>
           </nav>
     </body>
 </html>

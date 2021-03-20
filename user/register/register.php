@@ -1,5 +1,5 @@
 <?php
-include('../connection.php');
+include('../../connection.php');
 if(isset($_REQUEST['rsignup']))
 {
 	
@@ -13,7 +13,7 @@ if(isset($_REQUEST['rsignup']))
 	if($res->num_rows!=0)
 	{
 		echo "<script>window.alert('Sorry! Email id is already registreted');</script>";
-		echo "<script>location.href='../index/index.html';</script>";
+		echo "<script>location.href='../login/login.html';</script>";
 	}
 	else
 	{
@@ -23,7 +23,7 @@ if(isset($_REQUEST['rsignup']))
 		if($conn->query($sql)==TRUE)
 		{
 			
-			echo "<script>location.href='../index/index.html';</script>";
+			echo "<script>location.href='../login/login.html';</script>";
 		}
 		else
 		{

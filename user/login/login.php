@@ -1,5 +1,6 @@
+
 <?php
-include('../connection.php');
+include('../../connection.php');
 if(isset($_REQUEST['rlogin']))
 {
     $remail = $_REQUEST['remail'];
@@ -9,9 +10,9 @@ if(isset($_REQUEST['rlogin']))
     if($result->num_rows == 1)
     {
         session_start();
-        $_SESSION['remail']=$_POST['remail'];
-        $_SESSION['rpass']=$_POST['rpass'];
-        echo "<script>location.href='../user/profile/profile.php';</script>";
+    	$_SESSION['is_userlogin'] = true;
+		$_SESSION['remail'] = $remail;
+        echo "<script>location.href='../profile/profile.php';</script>";
     }
     else
     {
