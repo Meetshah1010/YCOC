@@ -57,20 +57,6 @@ function showPassword() {
           x.type = "password";
         }
         }
-
-        
-        // let unblock=document.getElementById("rsignup");
-        // console.log(unblock);
-        // function addatt(){
-        //     console.log("hello world");
-        //     unblock.setAttribute("type","submit");
-
-
-        // }
-
-
-
-        
 var checkbox = document.querySelector("input[name=iacceptreg]");
 
 var active=document.querySelector('#regform');
@@ -78,7 +64,7 @@ checkbox.addEventListener('change', function() {
   if (this.checked) {
     active.setAttribute("action","register.php");
   } else {
-    console.log("Checkbox is not checked..");
+    window.alert("Please accept our Terms & Conditions ");
     active.removeAttribute("action");
   }
 });
