@@ -10,10 +10,9 @@
 <body>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
     <style>
-
-.form-control:hover #passinfo{
-    display: block;
-}
+        .form-control:hover #passinfo {
+            display: block;
+        }
     </style>
     <div class="container register">
         <div class="row">
@@ -24,8 +23,8 @@
                     <input type="submit" name="" value="Login" /><br />
                 </form> -->
 
-                <button class="ghost" id="signup"  onclick="window.location.href='../login/login.php';">Login</button>
-                <hr style="width:50%;  border-width: 5px;"  >
+                <button class="ghost" id="signup" onclick="window.location.href='../login/login.php';">Login</button>
+                <hr style="width:50%;  border-width: 5px;">
             </div>
             <div class="col-md-9 register-right">
                 <h3 class="register-heading">Apply as a Cook</h3>
@@ -38,28 +37,28 @@
                                     <span class="input-group-text"><i class="fa fa-user"></i></span>
                                 </div>
                                 <input name="crname" type="text" class="form-control" placeholder="Enter a name"
-                                required />
+                                    required />
                             </div>
                             <div class="form-group input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fa fa-phone"></i></span>
                                 </div>
                                 <input name="crmob" id="crmob" onchange="varifymob()" type="text" class="form-control"
-                                required placeholder="Your Phone" />
+                                    required placeholder="Your Phone" />
                             </div>
                             <div class="form-group input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fa fa-envelope"></i></span>
                                 </div>
                                 <input name="cremail" type="email" class="form-control" required
-                                placeholder="Your E-mail" />
+                                    placeholder="Your E-mail" />
                             </div>
                             <div class="form-group input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fa fa-map-marker"></i></span>
                                 </div>
                                 <input name="crarea" type="text" class="form-control" required
-                                placeholder="Your working area" />
+                                    placeholder="Your working area" />
                             </div>
                             <div class="form-group input-group">
                                 <div class="input-group-prepend">
@@ -67,28 +66,29 @@
                                 </div>
                                 <input name="craddress" type="text" class="form-control" required
                                     placeholder="Your address" />
-                                </div>
-                                <div class="form-group">
-                                    <div class="maxl">
-                                        <label class="radio inline">
-                                            <input name="crgender" type="radio" name="gender" value="male" checked>
-                                            <span> Male </span>
+                            </div>
+                            <div class="form-group">
+                                <div class="maxl">
+                                    <label class="radio inline">
+                                        <input name="crgender" type="radio" name="gender" value="male" checked>
+                                        <span> Male </span>
                                     </label>
                                     <label class="radio inline">
                                         <input name="crgender" type="radio" name="gender" value="female">
                                         <span>Female </span>
                                     </label>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group my-3">
                                     <!-- actual upload which is hidden -->
-                                    <input type="file" id="actual-btn" hidden />
-                                    
+                                    <input type="file" id="actual-btn" hidden  />
+
                                     <!-- our custom upload button -->
-                                    <label id="imgupload" for="actual-btn">Choose File</label>
-                                    
+                                    <label id="" for="actual-btn"><img src="../../icons/camera.png"
+                                            alt="camera image" style="height: 46px;"></label>
+
                                     <!-- name of file chosen -->
-                                    <span id="file-chosen">No file chosen</span>
-                                    
+                                    <span id="file-chosen my-1">No file chosen</span>
+
                                 </div>
                             </div>
                         </div>
@@ -98,48 +98,48 @@
                                     <span class="input-group-text"><i class="fas fa-cheese"></i></span>
                                 </div>
                                 <input name="crspec" type="text" class="form-control" required
-                                placeholder="Your speciality" />
+                                    placeholder="Your speciality" />
                             </div>
                             <div class="form-group input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                                 </div>
                                 <input name="crpass" id="crpass" type="password" required class="form-control"
-                                onfocus="showpassinfo();" onfocusout="hidepassbox();"
-                                autocomplete="off"
-                                placeholder="Create a password" />
+                                    onfocus="showpassinfo();" onfocusout="hidepassbox();" autocomplete="off"
+                                    placeholder="Create a password" />
                             </div>
                             <div class="form-group input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                                 </div>
                                 <input type="password" id="crepass" required onchange="varifyPasswordmatching()"
-                                class="form-control" placeholder="Re-enter your password" />
+                                    class="form-control" placeholder="Re-enter your password" />
                             </div>
-                            <div id="passinfo" style="color: red;font-size: smaller; display: none;">Password should conatin 8 to 15 characters that
+                            <div id="passinfo" style="color: red;font-size: smaller; display: none;">Password should
+                                conatin 8 to 15 characters that
                                 should include at "least one lowercase letter", "one uppercase letter", "one numeric
                                 digit" & "one special character"</div>
-                                <div class="form-group">
-                                    <b><label class="checkbox-inline"><input type="checkbox"
-                                        onmousemove="varifyPassword(),varifyMobile()" required>I accept all the<a
-                                        class="primary" data-toggle="modal" data-target="#exampleModal"
-                                        href="#">T&C*</a></label></b>
-                                    </div>
-                                    
-                                    <div class="form-group input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="">Show password</span>
-                                        </div>
-                                        <input class="ml-2 mt-1" type="checkbox" onclick="showPassword()">
-                                    </div>
-                                    <input name="rsignup" type="submit" class="btnRegister" value="Register" />
+                            <div class="form-group">
+                                <b><label class="checkbox-inline"><input type="checkbox"
+                                            onmousemove="varifyPassword(),varifyMobile()" required>I accept all the<a
+                                            class="primary" data-toggle="modal" data-target="#exampleModal"
+                                            href="#">T&C*</a></label></b>
+                            </div>
+
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <span class="">Show password</span>
                                 </div>
-                            </form>
-                            <!-- modal dialogbox -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog modal-xl modal-dialog-scrollable ">
-                                <div class="modal-content">
+                                <input class="ml-2 mt-1" type="checkbox" onclick="showPassword()">
+                            </div>
+                            <input name="rsignup" type="submit" class="btnRegister" value="Register" />
+                        </div>
+                </form>
+                <!-- modal dialogbox -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-xl modal-dialog-scrollable ">
+                        <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Terms & Conditions</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -148,75 +148,85 @@
                             </div>
                             <div class="modal-body">
                                 <b> TERMS AND CONDITIONS</b></br>
-                                
+
                                 YCOC may revise these terms of use at any time by amending this page. You are expected
                                 to check this page from time to time to take notice of any changes we make, as they are
                                 binding on you.
-                                
+
                                 By using the website, (creating a profile) COOK are accepting the below specified Terms
                                 of Use:</br>
-                                
-                                <b>1.</b> COOK are responsible for informing YCOC if they are unable to take orders due to
+
+                                <b>1.</b> COOK are responsible for informing YCOC if they are unable to take orders due
+                                to
                                 prior commitments, sickness, holidays, etc. The COOK's inability to inform YCOC in a
                                 timely fashion can result in penalties as deemed fit by YCOC. The COOK is required to
                                 update their Leave Dates on the website through their personal admin system.
-                            </br>
-                            <b>2.</b> COOK are responsible for making comprehensive profiles on YCOC, providing detailed
-                            menus, quantities, pricing and all other specifics like preferred mode of delivery,
-                            desired notice period for orders and / or any other special services provided. YCOC will
+                                </br>
+                                <b>2.</b> COOK are responsible for making comprehensive profiles on YCOC, providing
+                                detailed
+                                menus, quantities, pricing and all other specifics like preferred mode of delivery,
+                                desired notice period for orders and / or any other special services provided. YCOC will
                                 not be responsible for any discrepancies that may arise thereafter.
                                 </br>
-                                <b>3.</b> In case of any copyright infringement due to photographs uploaded by COOK on their
+                                <b>3.</b> In case of any copyright infringement due to photographs uploaded by COOK on
+                                their
                                 profile, liability will lie on COOK and not on YCOC. The COOK must use real photographs
                                 of his/ her dishes only.
-                            </br>
-                            <b>4.</b> Once a Customer places an order on YCOC, the COOK must confirm the order, whereby he
-                            commits to the details of said placed order. YCOC will not be liable for any
-                            discrepancies that may arise thereafter.
-                        </br>
-                                <b>5.</b> The COOK are solely responsible for preparation and timely delivery of food (as per
+                                </br>
+                                <b>4.</b> Once a Customer places an order on YCOC, the COOK must confirm the order,
+                                whereby he
+                                commits to the details of said placed order. YCOC will not be liable for any
+                                discrepancies that may arise thereafter.
+                                </br>
+                                <b>5.</b> The COOK are solely responsible for preparation and timely delivery of food
+                                (as per
                                 terms specified on their profile) as well as for maintaining quality and hygiene. YCOC
                                 will not be responsible or liable for the quantity or quality of meals delivered.
-                            </br>
-                            <b>6.</b> The COOK by being on the platform acknowledges and agrees that a substantial portion
+                                </br>
+                                <b>6.</b> The COOK by being on the platform acknowledges and agrees that a substantial
+                                portion
                                 of the compensation the website receives for making the Site available to the COOK is
                                 collected as a commission on the money you receive for orders to the clients. Therefore,
                                 once you identify or are identified by any party through the site, you must inform
                                 YCOC.in of such an order and pay the commission for work arising directly or indirectly
                                 with that party or arising out of your relationship with that party.
-                            </br>
-                            <b>7.</b> If delivery is being done by COOK or if the Customer is picking up the food from the
-                            COOK, then YCOC will not be responsible for collecting payments from Customers and will
-                            not be liable therefore for loss that may occur due to non payment on behalf of
-                            Customers, if any.
-                        </br>
-                        <b>8.</b> YCOC will not be responsible for any health damages or sickness caused due to the
-                        food delivered by the COOK.
                                 </br>
-                                <b>9.</b> The COOK will follow the basic hygiene and safety requirements as laid down by the
+                                <b>7.</b> If delivery is being done by COOK or if the Customer is picking up the food
+                                from the
+                                COOK, then YCOC will not be responsible for collecting payments from Customers and will
+                                not be liable therefore for loss that may occur due to non payment on behalf of
+                                Customers, if any.
+                                </br>
+                                <b>8.</b> YCOC will not be responsible for any health damages or sickness caused due to
+                                the
+                                food delivered by the COOK.
+                                </br>
+                                <b>9.</b> The COOK will follow the basic hygiene and safety requirements as laid down by
+                                the
                                 FSSAI. If they fail to do so, the COOK may be asked for a refund of the full order value
                                 to the client.
-                            </br>
-                            <b>10.</b> YCOC will send regular reminders to COOK for the said commission and will be liable
-                            to cancel their registrations upon nonpayment to YCOC.
+                                </br>
+                                <b>10.</b> YCOC will send regular reminders to COOK for the said commission and will be
+                                liable
+                                to cancel their registrations upon nonpayment to YCOC.
                                 </br>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- modal dialogbox -->
             <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
+                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-            crossorigin="anonymous"></script>
+                integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+                crossorigin="anonymous"></script>
             <script src="register.js"></script>
-            
+
         </div>
     </div>
     </div>
