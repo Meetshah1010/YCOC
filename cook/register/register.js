@@ -46,3 +46,23 @@ function showPassword() {
           x.type = "password";
         }
         }
+
+        // for displaying uploaded image name 
+
+        const actualBtn = document.getElementById('actual-btn');
+
+        const fileChosen = document.getElementById('file-chosen');
+        
+        actualBtn.addEventListener('change', function(){
+          fileChosen.textContent = this.files[0].name
+        })
+// displaying combination of password should contain 
+const box=document.querySelector("#passinfo");
+function showpassinfo(){
+    box.style.display="block";
+
+}
+
+function hidepassbox() {
+    box.style.display="none";
+}

@@ -141,7 +141,7 @@
     
     body {
       
-      background-image: url(../svg/chef2.svg);
+      background-image: url(../../svg/chef2.svg);
       background-repeat: no-repeat;
       
     }
@@ -204,19 +204,22 @@
                 <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
               </div>
               <input name="rpass" id="rpass" onchange="varifyPassword()" class="form-control"
-              placeholder="Create password" required type="password" autocomplete="on">
-            </div> <!-- form-group// -->
+              placeholder="Create password" required type="password" autocomplete="on"
+              onfocus="showpassinfo();" onfocusout="hidepassbox();">
+            </div>              
             
-            <div class="form-group input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-            </div>
-            <input name="repass" id="repass" onchange="varifyPasswordmatching()" class="form-control" onchange=""
-            placeholder="Confirm Password" required type="password" autocomplete="on">
-            &nbsp;<br>
-            <h6 style="color: red;">Password should conatin 8 to 15 characters that should include at "least one
-              lowercase letter", "one uppercase letter", "one numeric digit" & "one special character"</h6>
-          </div> <!-- form-group// -->
+            
+                <div class="form-group input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+              </div>
+              <input name="repass" id="repass" onchange="varifyPasswordmatching()" class="form-control" onchange=""
+              placeholder="Confirm Password" required type="password" autocomplete="on">
+              &nbsp;<br>
+            </div> <!-- form-group// -->
+              <div id="passinfo" style="color: red;font-size: smaller; display: none;  font-weight:bolder;">Password should conatin 8 to 15 characters that
+              should include at "least one lowercase letter", "one uppercase letter", "one numeric
+              digit" & "one special character"</div>
           
           <div class="form-group input-group">
             <div class="input-group-prepend">
@@ -287,14 +290,14 @@
       <h4 class="loginwith">Sign in with</h4>
       <p>
         
-        <a href="" class="btn btn-block"> <img class="social" src="../../icons/Facebook 4.png" alt="facebook icon">
-          <facebook style="color: rgba(31, 84, 230, 0.829);">facebook</facebook>
+        <a href="" class="btn btn-block"> <img class="social" src="../../icons/Facebook.png" alt="facebook icon">
+          <span style="color: rgba(31, 84, 230, 0.829);">facebook</span>
         </a>
-        <a href="" class="btn btn-block ">  <img class="social" src="../../icons/instagram 4.png" alt="instagram icon">
-          <instagram style="color: rgba(233, 16, 186, 0.89);">instagram</i>
+        <a href="" class="btn btn-block ">  <img class="social" src="../../icons/instagram.png" alt="instagram icon">
+          <span style="color: rgba(233, 16, 186, 0.89);">instagram</span>
           </a>
-          <a href="" class="btn btn-block ">  <img class="social" src="../../icons/pinterest 4.png" alt="instagram icon">
-            <instagram style="color: rgba(228, 25, 76, 0.89);">pinterest</i>
+          <a href="" class="btn btn-block ">  <img class="social" src="../../icons/pinterest.png" alt="pinterest icon">
+            <span style="color: rgba(228, 25, 76, 0.89);">pinterest</span>
         </a>
         <p class="text-center">Have an account? <a href="../login/login.html">Log In</a> </p>
       </p>

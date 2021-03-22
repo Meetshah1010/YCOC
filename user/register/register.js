@@ -70,3 +70,12 @@ checkbox.addEventListener('change', function() {
 });
 
 
+const box=document.querySelector("#passinfo");
+function showpassinfo(){
+    box.style.display="block";
+
+}
+
+function hidepassbox() {
+    box.style.display="none";
+}
