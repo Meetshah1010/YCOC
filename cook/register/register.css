@@ -1,16 +1,18 @@
-.register{
+.register {
     background: #DE6262;
-    background: linear-gradient(to bottom, #FFB88C, #DE6262); 
+    background: linear-gradient(to bottom, #FFB88C, #DE6262);
     border-radius: 1%;
     margin-top: 3%;
     padding: 3%;
 }
-.register-left{
+
+.register-left {
     text-align: center;
     color: #fff;
     margin-top: 4%;
 }
-.register-left input{
+
+.register-left input {
     border: none;
     border-radius: 1.5rem;
     padding: 2%;
@@ -21,18 +23,21 @@
     margin-top: 30%;
     margin-bottom: 3%;
     cursor: pointer;
-    
+
 }
-.register-right{
+
+.register-right {
     background: #f8f9fa;
     border-top-left-radius: 10% 50%;
     border-bottom-left-radius: 10% 50%;
 }
-.register .register-form{
+
+.register .register-form {
     padding: 10%;
     margin-top: 10%;
 }
-.btnRegister{
+
+.btnRegister {
     float: right;
     margin-top: 10%;
     border: none;
@@ -44,19 +49,22 @@
     width: 50%;
     cursor: pointer;
 }
-.register-heading{
+
+.register-heading {
     text-align: center;
     margin-top: 8%;
     margin-bottom: -15%;
     color: #495057;
 }
-.loginbutton{
+
+.loginbutton {
     margin-top: 100px;
     min-width: 120px;
     border: black;
     border-radius: 20px;
     font-weight: bold;
 }
+
 #imgupload {
     background-color: indigo;
     color: white;
@@ -65,9 +73,91 @@
     border-radius: 0.3rem;
     cursor: pointer;
     margin-top: 1rem;
-  }
-  
-#file-chosen{
+}
+
+#file-chosen {
     margin-left: 0.3rem;
     font-family: sans-serif;
-  }
+}
+
+/* ///animation of login button */
+
+@keyframes up {
+    0% {
+        top: 0px;
+    }
+
+    10% {
+        top: 1px;
+    }
+
+    20% {
+        top: 2px;
+    }
+
+    30% {
+        top: 3px;
+    }
+
+    40% {
+        top: 4px;
+    }
+
+    50% {
+        top: 5px;
+    }
+
+    60% {
+        top: 6px;
+    }
+
+    70% {
+        top: 7px;
+    }
+
+    80% {
+        top: 8px;
+    }
+
+    90% {
+        top: 9px;
+    }
+
+    100% {
+        top: 10px;
+    }
+}
+
+
+#signup {
+    position: relative;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    width: 60%;
+    background: #f8f9fa;
+    font-weight: bold;
+    color: #383d41;
+    margin-top: 30%;
+    margin-bottom: 3%;
+    cursor: pointer;
+    animation-name: up;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+
+}
+
+.ghost:hover {
+    background-color: white;
+    color: #FF416C;
+    font-size: large;
+    border-radius: 50%;
+    padding: 48px 29px;
+    margin-top: 8px;
+}
+
+.ghost:hover hr {
+    width: 20%;
+
+}

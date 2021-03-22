@@ -56,3 +56,13 @@ function showPassword() {
         actualBtn.addEventListener('change', function(){
           fileChosen.textContent = this.files[0].name
         })
+// displaying combination of password should contain 
+const box=document.querySelector("#passinfo");
+function showpassinfo(){
+    box.style.display="block";
+
+}
+
+function hidepassbox() {
+    box.style.display="none";
+}
