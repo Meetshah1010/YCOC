@@ -1,24 +1,35 @@
 body {
     font-size: 100%;
 }
+
 .navbar {
     background: transparent;
 }
-.navbar-shrink{
+
+.navbar-shrink {
     padding-top: 0;
     padding-bottom: 0;
 }
+
 .navbar-brand {
     font-size: 2em;
     font-weight: bolder;
 }
+
 .navbar a:not(.navbar-brand) {
     font-weight: bolder;
     font-size: 1.4em;
     color: #ffffff !important;
 }
-.navbar a:not(.navbar-brand):hover{
-	color:red !important;
+
+.navbar a:not(.navbar-brand):hover {
+    color: red !important;
+}
+
+
+#navcomponent li>a:hover {
+    background-color: white;
+    border-radius: 10px;
 }
 
 header.masthead {
@@ -53,9 +64,10 @@ header.masthead h1 {
         padding-top: 12rem;
         padding-bottom: 12rem
     }
+
     header.masthead h1 {
         font-size: 4rem;
-        font-weight:bold;
+        font-weight: bold;
     }
 }
 
@@ -115,9 +127,10 @@ img.img-fluid.rounded-circle.mb-3 {
     width: 192px;
     object-fit: cover;
 }
-.featherlight .featherlight-image{
-    width:600px;
-    height:400px;
+
+.featherlight .featherlight-image {
+    width: 600px;
+    height: 400px;
 }
 
 /*-----parallax-----*/
@@ -167,7 +180,9 @@ footer.footer {
 }
 
 .mybg-dark {
-    background: #000000 !important;
+    background: #000000;
+    opacity: 0.6;
+
 }
 
 .order-now a {
@@ -183,7 +198,7 @@ footer.footer {
 
 .order-now a:hover {
     background: red;
-    color:#fff;
+    color: #fff;
     opacity: 1;
 }
 
