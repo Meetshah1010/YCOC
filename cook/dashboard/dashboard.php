@@ -36,6 +36,7 @@ else
         <nav class="navbar navbar-expand-lg " style="background-color:#22AFF1">
             <a class="navbar-brand" style="color:black;" href="../../landing/landing.html"><b>YCOC</b></a>
             <ul class="navbar-nav ml-auto">
+            
             <li class="nav-item">
                 <?php
                     echo '<img  style="border: 1px solid; border-radius:30px; white;height:50px;width:50px;" class="zoomA" src="data:image/jpeg;base64,'.base64_encode($image['img'] ).'" />';
