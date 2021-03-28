@@ -101,7 +101,7 @@ else
 					$img = "DELETE FROM images WHERE id={$_REQUEST['id']}";
 					if(($conn->query($sql)==TRUE) && ($conn->query($img)==TRUE))
 					{
-						echo '<meta http-equiv="referesh" content="0;URL=?deleted"/>';
+						echo '<meta http-equiv="refresh" content="1">';
 					}
 					else
 					{
