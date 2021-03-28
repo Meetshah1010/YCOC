@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>About us</title>
-      <link rel="stylesheet" href="css/about.css">
+      <link rel="stylesheet" href="assets/css/about.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
       <script>
@@ -75,7 +75,7 @@ $(document).ready(function(){
   <ul class="team clearfix">
     <li>
       <div class="profile_container">
-        <img alt="Meet Shah" class="profilepic" src="images/meet.jpg" />
+        <img alt="Meet Shah" class="profilepic" src="assets/images/meet.jpg" />
         <div class="bigimg-overlay">
           <div class="bigimg-text"><strong>Meet Shah</strong><br>Full Stack Devloper</div>
         </div>
@@ -86,7 +86,7 @@ $(document).ready(function(){
     </li>
     <li>
       <div class="profile_container">
-        <img alt="Krishna Shah" class="profilepic" src="images/krishna.jpg" />
+        <img alt="Krishna Shah" class="profilepic" src="assets/images/krishna.jpg" />
         <div class="bigimg-overlay">
           <div class="bigimg-text"><strong>Krishna Shah</strong><br>Front End Devloper</div>
         </div>
@@ -97,7 +97,7 @@ $(document).ready(function(){
     </li>
     <li>
       <div class="profile_container">
-        <img alt="Binal Raiyani" class="profilepic" src="images/binal.jpg">
+        <img alt="Binal Raiyani" class="profilepic" src="assets/images/binal.jpg">
         <div class="bigimg-overlay">
           <div class="bigimg-text"><strong>Binal Raiyani</strong><br>Database Handler</div>
         </div>
@@ -109,7 +109,7 @@ $(document).ready(function(){
     </li>
         <li>
       <div class="profile_container">
-        <img alt="Ramprasad Sarkar" class="profilepic flipimg" src="images/ram.jpg" />
+        <img alt="Ramprasad Sarkar" class="profilepic flipimg" src="assets/images/ram.jpg" />
         <div class="bigimg-overlay">
           <div class="bigimg-text"><strong>Ramprasad Sarkar</strong><br>Php Devloper</div>
         </div>
