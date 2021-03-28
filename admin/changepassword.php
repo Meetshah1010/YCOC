@@ -40,10 +40,10 @@ if(isset($_REQUEST['update']))
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet"  href="../css/bootstrap.min.css">
+	<link rel="stylesheet"  href="../assets/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="../css/fontawesome.min.css">
-	<link rel="stylesheet"  href="../css/custom.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/fontawesome.min.css">
+	<link rel="stylesheet"  href="../assets/css/custom.css">
     <link rel="stylesheet" href="dashboard/dashboard.css">
 </head>
 <body>
@@ -89,9 +89,9 @@ if(isset($_REQUEST['update']))
 
 	</div><!-- end row-->
 </div><!--end container-->
-<script src="../js/jquery.min.js"></script>
-<script src="../js/popper.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/all.min.css"></script>
+<script src="../assets/js/popper.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/all.min.css"></script>
+<script src="../assets/js/jquery.min.js"></script>
 </body>
 </html>

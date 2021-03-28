@@ -30,7 +30,7 @@ if(isset($_POST['rsignin']))
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/css1.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/css1.css">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/login.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -67,7 +67,7 @@ if(isset($_POST['rsignin']))
 				<h1>Hello, Friend!</h1>
 				<p>Enter your personal details and start journey with us</p>
 				<button class="ghost" id="signup"  onclick="window.location.href='register/register.html';">Sign Up</button>
-				<img src="svg/shadow.svg" id="rock" alt="shadow" style="display:none;">
+				<img src="assets/svg/shadow.svg" id="rock" alt="shadow" style="display:none;">
 				<hr style="width:45%;  border-width: 5px;"  >
 			</div>
 		</div>
