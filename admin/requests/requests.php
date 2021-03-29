@@ -137,7 +137,7 @@ else
 						if($conn->query($del)==TRUE)
 						{
 							echo '<meta http-equiv="refresh" content="1">';
-							echo '<a href="mailto:<?php echo $cemail;?>">Click here</a>';
+							echo '<a id="mail" href="mailto:<?php echo $cemail;<?>">Click here</a>';
 						}
 						else
 						{
