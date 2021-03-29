@@ -85,8 +85,6 @@ $user = $result->fetch_assoc();
 
             padding: 0.3rem;
             text-align: left;
-
-
         }
 
         #menu {
@@ -94,6 +92,7 @@ $user = $result->fetch_assoc();
         }
     </style>
 
+<<<<<<< HEAD
 
 
 
@@ -130,6 +129,10 @@ $user = $result->fetch_assoc();
 =======
 <nav class="navbar navbar-expand-lg" style="border: 1px solid;">
     <a class="navbar-brand" style="color:black;" href="../../landing/landing.html">YCOC</a>
+=======
+    <nav class="navbar navbar-expand-lg" style="border: 1px solid;">
+        <a class="navbar-brand" style="color:black;" href="../../landing/landing.html">YCOC</a>
+>>>>>>> cfbc515ce40fbd1181414258fb0bdea3220cc1d2
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <?php
@@ -166,5 +169,6 @@ $user = $result->fetch_assoc();
         menu.classList.toggle("hidden");
     })
 </script>
+
 
 </html>
