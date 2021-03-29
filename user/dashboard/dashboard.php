@@ -52,14 +52,13 @@
 
             padding: 0.3rem;
             text-align: left;
-
-
         }
 
         #menu {
             overflow: hidden;
         }
     </style>
+
     <nav class="navbar navbar-expand-lg" style="border: 1px solid;">
         <a class="navbar-brand" style="color:black;" href="../../landing/landing.html">YCOC</a>
         <ul class="navbar-nav ml-auto">
@@ -92,5 +91,6 @@
 
     </a>
 </body>
+
 
 </html>
