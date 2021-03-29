@@ -52,6 +52,7 @@ if(isset($_REQUEST['cemail']))
 					<input type="Password" name="cpassword" placeholder="Password" class="form-control">
 				</div>
 				<button type="submit" class="btn btn-outline-danger mt-3 font-weight-bold">Log in</button>
+				<a style="margin-left:260px;font-weight=bold;text-decoration:none;" href="../register/register.html">New user!?</a>
 				<?php if(isset($msg)) {echo $msg;} ?>
 			</form>
 		</div>

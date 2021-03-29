@@ -8,7 +8,6 @@
 </head>
 
 <body>
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
     <style>
         .form-control:hover #passinfo {
@@ -81,12 +80,11 @@
                                 </div>
                                 <div class="form-group my-3">
                                     <!-- actual upload which is hidden -->
-                                    <input type="file" id="actual-btn" hidden  />
 
                                     <!-- our custom upload button -->
                                     <label id="" for="actual-btn"><img src="../../assets/icons/camera.png"
                                             alt="camera image" style="height: 46px;"></label>
-
+                                    <input type="file" name="image">
                                     <!-- name of file chosen -->
                                     <span id="file-chosen my-1">No file chosen</span>
 
@@ -122,8 +120,8 @@
                                 digit" & "one special character"</div>
                             <div class="form-group">
                                 <b><label class="checkbox-inline"><input type="checkbox"
-                                            onmousemove="varifyPassword(),varifyMobile()" required>I accept all the<a
-                                            class="primary" data-toggle="modal" data-target="#exampleModal"
+                                            onmousemove="varifyPassword(),varifyMobile()" required>I accept all the
+                                            <a class="primary" data-toggle="modal" data-target="#exampleModal"
                                             href="#">T&C*</a></label></b>
                             </div>
 

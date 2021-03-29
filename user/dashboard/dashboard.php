@@ -1,5 +1,20 @@
+<?php
+include('../../connection.php');
+session_start();
+if(isset($_SESSION['is_userlogin']))
+{
+    $remail = $_SESSION['remail'];
+}
+else
+{
+    echo "<script> location.href='../login/login.html'</script>";
+}
+$sql = "SELECT * FROM register WHERE remail = '".$remail."'";
+$result = $conn->query($sql);
+$user = $result->fetch_assoc();
+?>
+<!DOCTYPE html>
 <html>
-
 <head>
     <title>
         YCOC
@@ -12,10 +27,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/custom.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="dashboard.js"></script>
     <link rel="stylesheet" href="dashboard.css">
 </head>
-
 <body>
+<<<<<<< HEAD
     <style>
         .bg-img {
 
@@ -111,6 +127,36 @@
 
 
 
+=======
+<nav class="navbar navbar-expand-lg" style="border: 1px solid;">
+    <a class="navbar-brand" style="color:black;" href="../../landing/landing.html">YCOC</a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <?php
+                echo '<a id="example" class="nav-link ml-1" href="#" style="color:black;"><b>'.$user['rname'].'</b></a>';
+                ?>
+            </li><a id="example" class="nav-link ml-1" href="#" style="color:black;">
+            </a>
+        </ul>
+        <a id="example" class="nav-link ml-1" href="#" style="color:black;">
+
+        </a>
+    </nav>
+        <div id="menu" class="menudesign">
+            <div onClick="profile()" class="list">profile</div>
+            <div class="list">settings</div>
+            <div onClick="logout()" class="list" >logout</div>
+        </div>
+        <script>
+            const example = document.querySelector("#example");
+            const menu = document.querySelector("#menu");
+            console.log(example);
+            example.addEventListener('click', () => {
+                menu.classList.toggle("hidden");
+            })
+        </script>
+    </a>
+>>>>>>> 71b2e26791c878b805c90d77e8611b064ce4671a
 </body>
 <script>
     const example = document.querySelector("#example");
