@@ -17,6 +17,23 @@
 
 <body>
     <style>
+        .bg-img {
+
+            background-image: url(dish.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            min-height: 300px;
+
+
+        }
+
+        .container-fluid {
+            position: absolute;
+            width: auto;
+        }
+
         .menudesign {
             position: absolute;
             top: 3rem;
@@ -60,37 +77,48 @@
             overflow: hidden;
         }
     </style>
-    <nav class="navbar navbar-expand-lg" style="border: 1px solid;">
-        <a class="navbar-brand" style="color:black;" href="../../landing/landing.html">YCOC</a>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a id="example" class="nav-link ml-1" href="#" style="color:black;"><b>Ramprasad Sarkar</b>
-                    <p></p>
-                </a>
-            </li><a id="example" class="nav-link ml-1" href="#" style="color:black;">
-            </a>
-        </ul><a id="example" class="nav-link ml-1" href="#" style="color:black;">
 
-        </a>
-    </nav><a id="example" class="nav-link ml-1" href="#" style="color:black;">
-        <div id="menu" class="menudesign">
-            <div class="list">profile</div>
-            <div class="list">settings</div>
-            <div class="list">logout</div>
 
+
+
+
+
+
+
+    <div class="bg-img">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg" style="border: 1px solid;">
+                <a class="navbar-brand" style="color:black;" href="../../landing/landing.html">YCOC</a>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a id="example" class="nav-link ml-1" href="#" style="color:black;"><b>Ramprasad Sarkar</b>
+                            <p></p>
+                        </a>
+                    </li>
+                </ul>
+
+
+            </nav>
+            <div id="menu" class="menudesign">
+                <div class="list">profile</div>
+                <div class="list">settings</div>
+                <div class="list">logout</div>
+
+            </div>
         </div>
+    </div>
 
 
-        <script>
-            const example = document.querySelector("#example");
-            const menu = document.querySelector("#menu");
-            console.log(example);
-            example.addEventListener('click', () => {
-                menu.classList.toggle("hidden");
-            })
-        </script>
 
-    </a>
+
 </body>
+<script>
+    const example = document.querySelector("#example");
+    const menu = document.querySelector("#menu");
+    console.log(example);
+    example.addEventListener('click', () => {
+        menu.classList.toggle("hidden");
+    })
+</script>
 
 </html>
