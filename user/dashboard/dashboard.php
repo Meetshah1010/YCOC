@@ -1,5 +1,5 @@
-<html>
 
+<html>
 <head>
     <title>
         YCOC
@@ -17,6 +17,9 @@
 
 <body>
     <style>
+    body{
+        background-image: url(../../assets/images/dish\ 1.jpg);
+    }
         .menudesign {
             position: absolute;
             top: 3rem;
