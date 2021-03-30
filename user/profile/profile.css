@@ -1,0 +1,78 @@
+.container-sm {
+    /* background-color: blue; */
+    /* max-width: 110rem; */
+    /* position: relative; */
+
+}
+
+.profilebg {
+    background-image: url(dish.png);
+    position: relative;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-position: 10% 65%; */
+    /* position: absolute; */
+}
+
+.profileinfo {
+    /* position: absolute; */
+    position: absolute;
+    margin-top: 18px;
+    margin-left: 7px;
+}
+
+.profileedit {
+    position: absolute;
+    margin-top: 57px;
+    margin-left: 1117px;
+}
+
+#profileimg {
+    border: solid white 2px;
+    border-radius: 50%;
+    height: 174px;
+    width: auto;
+}
+
+.cwhite {
+    color: white;
+
+}
+
+.edit {
+    background-color: rgb(237, 90, 107);
+    padding: 11px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+.leftpanel {
+    float: left;
+    margin-top: 31px;
+    width: 305px;
+    margin-bottom: 2rem;
+    border: 1px solid rgb(248, 248, 248);
+    border-radius: 8px;
+
+}
+
+.leftitem {
+    padding: 2px;
+    margin-bottom: 2px;
+}
+
+.leftitem a {
+    font-weight: 400;
+
+    font-size: 1.3rem;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.itemtext {
+    color: rgb(21, 142, 179) !Important;
+}
+
+/* .leftitemclickclass {} */

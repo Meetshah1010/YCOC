@@ -14,60 +14,15 @@
     <link rel="stylesheet" href="../assets/css/custom.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="profile.css">
 </head>
-<style>
-    .container-sm {
-        /* background-color: blue; */
-        /* max-width: 110rem; */
-        /* position: relative; */
 
-    }
+<!-- head tag ends -->
 
-    .profilebg {
-        background-image: url(dish.png);
-        position: relative;
-        height: 200px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        /* background-position: 10% 65%; */
-        /* position: absolute; */
-    }
 
-    .profileinfo {
-        /* position: absolute; */
-        position: absolute;
-        margin-top: 18px;
-        margin-left: 7px;
-    }
 
-    .profileedit {
-        position: absolute;
-        margin-top: 57px;
-        margin-left: 1117px;
-    }
-
-    #profileimg {
-        border: solid white 2px;
-        border-radius: 50%;
-        height: 174px;
-        width: auto;
-    }
-
-    .cwhite {
-        color: white;
-
-    }
-
-    .edit {
-        background-color: rgb(237, 90, 107);
-        padding: 11px;
-        color: white;
-        border-radius: 10px;
-        border: none;
-
-    }
-</style>
 
 <body>
     <div class="container-sm" style="margin: 0px 146px 0px 146px;">
@@ -87,6 +42,22 @@
                             </svg></i><span class="sc-1kx5g6g-3 dkwpEa">Edit profile</span></span></button>
             </div>
         </div>
+        <!-- ////navbar ends left panel start -->
+
+        <div class="leftpanel">
+            <div class=" leftitem">
+                <h5><a class="">Address</a></h5>
+            </div>
+            <div class="leftitem">
+                <h5><a class="">Recentley Booked</a></h5>
+            </div>
+            <div class="leftitem"><a class="">Favorite Chef</a></div>
+            <div class="leftitem"><a class="">Donate For Charity</a></div>
+            <div class="leftitem"><a class=""> Your Friend</a></div>
+            <div class="leftitem"><a class="">Order History</a></div>
+            <div class="leftitem"><a class="">Report Us</a></div>
+        </div>
+
     </div>
 </body>
 <script>
