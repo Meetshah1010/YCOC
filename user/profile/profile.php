@@ -1,25 +1,23 @@
 <?php
 include('../../connection.php');
 session_start();
-if(isset($_SESSION['is_userlogin']))
-{
+if (isset($_SESSION['is_userlogin'])) {
     $remail = $_SESSION['remail'];
-}
-else
-{
+} else {
     echo "<script> location.href='../login/login.html'</script>";
 }
-$sql = "SELECT * FROM register WHERE remail = '".$remail."'";
+$sql = "SELECT * FROM register WHERE remail = '" . $remail . "'";
 $result = $conn->query($sql);
 $user = $result->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Profile
-        </title>
-        <meta charset="utf-8">
+
+<head>
+    <title>
+        Profile
+    </title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
@@ -31,12 +29,11 @@ $user = $result->fetch_assoc();
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="profile.css">
-        <link rel="stylesheet" 
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" 
-        integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
-        <script src="profile.js"></script>
-    </head>
-    <body>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <script src="profile.js"></script>
+</head>
+
+<body>
     <div class="container-sm" style="margin: 0px 146px 0px 146px;">
         <div class="profilebg">
             <div class="profileinfo">
@@ -71,28 +68,25 @@ $user = $result->fetch_assoc();
         </div>
 
     </div>
-     
-        <!-- Modal HTML Markup -->
-<div id="ModalLoginForm" class="modal fade">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title">Edit Profile</h1>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form  method="POST" action="">
-                    <?php
-                    if($user['image']!=NULL)
-                    {
-                        echo '<img style="border: 3px solid; border-radius:50px; white;height:100px;width:100px;" class="zoomA" src="data:image/jpeg;base64,'.base64_encode($user['image'] ).'" />';
-                    }
-                    else
-                    {
-                        echo '<img style="border: 3px solid; border-radius:50px; white;height:100px;width:100px;" src="../../assets/images/avtar.png"/>';
-                    }
-                    
-                    echo '<div class="form-group">
+
+    <!-- Modal HTML Markup -->
+    <div id="ModalLoginForm" class="modal fade">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">Edit Profile</h1>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="">
+                        <?php
+                        if ($user['image'] != NULL) {
+                            echo '<img style="border: 3px solid; border-radius:50px; white;height:100px;width:100px;" class="zoomA" src="data:image/jpeg;base64,' . base64_encode($user['image']) . '" />';
+                        } else {
+                            echo '<img style="border: 3px solid; border-radius:50px; white;height:100px;width:100px;" src="../../assets/images/avtar.png"/>';
+                        }
+
+                        echo '<div class="form-group">
                     <fieldset>
                          <legend>Personalia:</legend>
                         <input class="form-control input-lg" type="text" id="fname" name="fname" value="John"><br>
@@ -119,17 +113,17 @@ $user = $result->fetch_assoc();
 
                             <a class="btn btn-link" href="">Forgot Your Password?</a>
                         </div>';
-                    ?>
-                    </div>
+                        ?>
+                </div>
                 </form>
-                
+
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
-    </body>
+    </div><!-- /.modal -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+</body>
+
 </html>
-    
