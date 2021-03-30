@@ -34,16 +34,54 @@ $user = $result->fetch_assoc();
 </head>
 
 <body>
+<nav class="navbar navbar-expand-lg" style="background-color:#fff5f9;margin-bottom:10px;">
+    <a class="navbar-brand" style="color:black;" href="../../landing/landing.html">YCOC</a>              
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <?php
+            if($user['image']!=NULL)
+            {
+                echo '<img  style="border: 1px solid; border-radius:30px; white;height:50px;width:50px;" class="zoomA" 
+                        src="data:image/jpeg;base64,'.base64_encode($user['image'] ).'" />';
+            }
+            else
+            {
+                
+                echo '<img id="profileimg" alt="profile image"
+                style="border: 1px solid; border-radius:30px; white;height:50px;width:50px;" src="profile.png"/>';
+            }
+            ?>
+            </li>
+            <li class="nav-item">
+            <?php
+                echo '<a id="example" class="nav-link ml-1" href="#" style="color:black;"><b>' . $user['rname'] . '</b></a>';
+            ?>
+            </li>
+            <a id="example" class="nav-link ml-1" href="#" style="color:black;"></a>
+        </ul>
+        <a id="example" class="nav-link ml-1" href="#" style="color:black;"></a>
+</nav>
     <div class="container-sm" style="margin: 0px 146px 0px 146px;">
         <div class="profilebg">
-            <div class="profileinfo">
-                <img id="profileimg" src="profile.png" alt="profile image" style="float: left;">
-                <div style="margin-top:45px; margin-left:16px; float:right;">
-                    <div class="cwhite" style="font-weight:bolder; font-size:22px;">Ramprasad sarkar</div>
-                    <div class="cwhite">ramprasad.r2600@gmail.com</div>
-                    <div class="cwhite">bhavnagar</div>
-                </div>
-
+        <?php
+            echo '<div class="profileinfo">';
+            if($user['image']!=NULL){
+                echo '<div class="profilepicture">
+                        <img id="profileimg" src="data:image/jpeg;base64,'.base64_encode($user['image'] ).'" 
+                        alt="profile image" style="float: left;">
+                        <img class="overlay" style="float: left;" src="https://img.icons8.com/metro/26/000000/camera.png"/>
+                    </div>';
+            }
+            else
+            {
+                echo '<img id="profileimg" alt="profile image" style="float: left;" src="../../assets/images/avtar.png"/>';
+            }    
+            echo '  <div style="margin-top:45px; margin-left:16px; float:right;">
+                    <div class="cwhite" style="font-weight:bolder; font-size:22px;">'.$user['rname'].'</div>
+                    <div class="cwhite">'.$user['remail'].'</div>
+                    <div class="cwhite">'.$user['rlandmark'].'</div>
+                </div>';
+        ?>
             </div>
             <div class="profileedit">
                 <button data-toggle="modal" data-target="#ModalLoginForm" class="edit" role="button" tabindex="0" aria-disabled="false"><span tabindex="-1" class="sc-1kx5g6g-2 gylDKm"><i class="rbbb40-1 MxLSp sc-1kx5g6g-0 gyojlT" color="#FFFFFF" size="10"><svg xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" width="10" height="10" viewBox="0 0 20 20" aria-labelledby="icon-svg-title- icon-svg-desc-" role="img" class="rbbb40-0 fdFvgA">
@@ -66,9 +104,7 @@ $user = $result->fetch_assoc();
             <div class="leftitem"><a class="">Order History</a></div>
             <div class="leftitem"><a class="">Report Us</a></div>
         </div>
-
     </div>
-
     <!-- Modal HTML Markup -->
     <div id="ModalLoginForm" class="modal fade">
         <div class="modal-dialog" role="document">
@@ -78,48 +114,34 @@ $user = $result->fetch_assoc();
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" action="">
+                    <form method="POST" action="updateuser.php" >
                         <?php
                         if ($user['image'] != NULL) {
                             echo '<img style="border: 3px solid; border-radius:50px; white;height:100px;width:100px;" class="zoomA" src="data:image/jpeg;base64,' . base64_encode($user['image']) . '" />';
                         } else {
-                            echo '<img style="border: 3px solid; border-radius:50px; white;height:100px;width:100px;" src="../../assets/images/avtar.png"/>';
+                            echo '<img style="border: 3px solid; border-radius:50px; white;height:100px;width:100px;" src="profile.png"/>';
                         }
-
                         echo '<div class="form-group">
-                    <fieldset>
-                         <legend>Personalia:</legend>
-                        <input class="form-control input-lg" type="text" id="fname" name="fname" value="John"><br>
-                         </fieldset>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label">Password</label>
-                        <div>
-                            <input type="password" class="form-control input-lg" name="password">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" name="remember"> Remember Me
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div>
-                            <button type="submit" class="btn btn-success">Login</button>
-
-                            <a class="btn btn-link" href="">Forgot Your Password?</a>
-                        </div>';
+                                <label class="control-label">Full Name</label>
+                                <input required type="text" value="'.$user['rname'].'" class="form-control input-lg" name="rname">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Contact Number</label>
+                                    <input required type="text" pattern="[0-9]{10}" required value="'.$user['rmob'].'" class="form-control input-lg" name="rmob">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Address</label>
+                                    <input type="text" required value="'.$user['rlandmark'].'" class="form-control input-lg" name="rarea">
+                                </div>
+                                <div class="form-group">
+                                    <button class="update" name="update" type="submit">Update</button>
+                                </div>';
                         ?>
+                            </div>
+                    </form>
                 </div>
-                </form>
-
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
