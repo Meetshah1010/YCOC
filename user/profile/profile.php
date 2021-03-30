@@ -110,11 +110,20 @@ $user = $result->fetch_assoc();
                 <div class="modal-body">
                     <form method="POST" action="updateuser.php">
                         <?php
+                        echo '
+                                    <div class="img-box" style="border:2px solid black">';
                         if ($user['image'] != NULL) {
-                            echo '<img style="border: 3px solid; border-radius:50px; white;height:100px;width:100px;" class="zoomA" src="data:image/jpeg;base64,' . base64_encode($user['image']) . '" />';
+                            echo '<img class="image" style=height:100px;width:100px;" class="zoomA" src="data:image/jpeg;base64,' . base64_encode($user['image']) . '" />';
                         } else {
-                            echo '<img style="border: 3px solid; border-radius:50px; white;height:100px;width:100px;" src="profile.png"/>';
+                            echo '<img class="image" style="height:100px;width:100px;" src="profile.png"/>';
                         }
+
+                        echo '<div class="overlay">
+                            <div class="circle"></div>
+                            <img class="svg" src="p.svg" style="">          
+                                 </div>
+                        </div>
+                        ';
                         echo '<div class="form-group">
                                 <label class="control-label">Full Name</label>
                                 <input required type="text" value="' . $user['rname'] . '" class="form-control input-lg" name="rname">

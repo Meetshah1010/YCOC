@@ -84,24 +84,76 @@
     color: white;
     border-radius: 30px;
 }
-.overlay {
-    position: absolute; 
-    background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.5); /* Black see-through */
-    color: #f1f1f1; 
-    width: 100%;
-    transition: .5s ease;
-    opacity:0;
-    color: white;
-    font-size: 20px;
-    padding: 20px;
-    align-items: center;
-  }
-  .profilepicture {
+
+
+/* edit button form css */
+* {
+    box-sizing: border-box;
+}
+
+.img-box {
     position: relative;
-    width: 50%;
+    width: 18%;
     max-width: 300px;
-  }
-  .profilepicture:hover .overlay {
+    border-radius: 50%;
+}
+
+.image {
+    /* position:absolute; */
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+
+}
+
+.circle {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: rgba(250, 247, 247, 0.6);
+    padding: 1.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    /* z-index: 2; */
+    transform: translateY(-50%) translateX(-50%);
+    pointer-events: all;
+}
+
+.overlay {
+    position: absolute;
+    /* background: rgb(0, 0, 0); */
+    /* background: rgba(0, 0, 0, 0.5); Black see-through */
+    /* filter: blur(4px); */
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    opacity: 0;
+    transition: .5s ease;
+    z-index: 2;
+    opacity: 0;
+
+
+}
+
+.img-box:hover .image {
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+.img-box:hover .overlay {
     opacity: 1;
-  }
+    /* z-index: 3; */
+}
+
+.svg {
+    position: absolute;
+    height: 25px;
+    width: auto;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    /* top: 34%;
+    left: 36%; */
+}
