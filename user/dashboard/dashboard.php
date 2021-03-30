@@ -30,7 +30,7 @@ $user = $result->fetch_assoc();
 </head>
 
 <body>
-    <<<<<<< HEAD <style>
+     <style>
         .bg-img {
 
         background-image: url(dish.png);
@@ -89,40 +89,9 @@ $user = $result->fetch_assoc();
         overflow: hidden;
         }
         </style>
-
-        <<<<<<< HEAD <div class="bg-img">
-            <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg" style="border: 1px solid;">
                     <a class="navbar-brand" style="color:black;" href="../../landing/landing.html">YCOC</a>
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a id="example" class="nav-link ml-1" href="#" style="color:black;"><b>Ramprasad Sarkar</b>
-                                <p></p>
-                            </a>
-                        </li>
-                    </ul>
-
-
-                </nav>
-                <div id="menu" class="menudesign">
-                    <div class="list">profile</div>
-                    <div class="list">settings</div>
-                    <div class="list">logout</div>
-
-                </div>
-            </div>
-            </div>
-
-
-
-
-            =======
-            <nav class="navbar navbar-expand-lg" style="border: 1px solid;">
-                <a class="navbar-brand" style="color:black;" href="../../landing/landing.html">YCOC</a>
-                =======
-                <nav class="navbar navbar-expand-lg" style="border: 1px solid;">
-                    <a class="navbar-brand" style="color:black;" href="../../landing/landing.html">YCOC</a>
-                    >>>>>>> cfbc515ce40fbd1181414258fb0bdea3220cc1d2
+                   
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <?php
@@ -149,7 +118,7 @@ $user = $result->fetch_assoc();
                     })
                 </script>
                 </a>
-                >>>>>>> 71b2e26791c878b805c90d77e8611b064ce4671a
+               
 </body>
 <script>
     const example = document.querySelector("#example");
