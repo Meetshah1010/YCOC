@@ -1,15 +1,92 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <form action="/action_page.php">
-            <fieldset>
-              <legend>Personalia:</legend>
-              <label for="fname">First name:</label><br>
-              <input type="text" id="fname" name="fname" value="John"><br>
-              <label for="lname">Last name:</label><br>
-              <input type="text" id="lname" name="lname" value="Doe"><br><br>
-              <input type="submit" value="Submit">
-            </fieldset>
-          </form>
-    </body>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .container {
+      position: relative;
+      width: 50%;
+      max-width: 300px;
+    }
+
+    .image {
+      /* position:absolute; */
+      display: block;
+      width: 100%;
+      height: auto;
+
+    }
+
+    .circle {
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background: rgba(250, 247, 247, 0.6);
+      padding: 2.1rem;
+      border-radius: 50%;
+      cursor: pointer;
+      /* z-index: 2; */
+      transform: translateY(-50%) translateX(-50%);
+      pointer-events: all;
+    }
+
+    .overlay {
+      position: absolute;
+      /* background: rgb(0, 0, 0); */
+      /* background: rgba(0, 0, 0, 0.5); Black see-through */
+      /* filter: blur(4px); */
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      opacity: 0;
+      transition: .5s ease;
+      z-index: 2;
+
+
+    }
+
+    .container:hover .image{
+      filter: blur(2px);
+      -webkit-filter: blur(2px);
+    }
+
+    .container:hover .overlay {
+      opacity: 1;
+      /* z-index: 3; */
+    }
+
+    .svg {
+      position: absolute;
+      height: 50px;
+      width: auto;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      /* top: 34%;
+    left: 36%; */
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Image Overlay Title</h2>
+  <p>Hover over the image to see the effect.</p>
+
+  <div class="container">
+    <img src="assets/images/avtar.png" alt="Avatar" class="image">
+    <div class="overlay">
+      <div class="circle"></div>
+      <img class="svg" src="p.svg" style="">
+    </div>
+  </div>
+
+</body>
+
 </html>
