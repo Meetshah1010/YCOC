@@ -30,7 +30,7 @@ $user = $result->fetch_assoc();
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="profile.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
-    <script src="profile.js"></script>
+
 </head>
 
 <body>
@@ -87,19 +87,15 @@ $user = $result->fetch_assoc();
 
     <div class="leftpanel">
         <div class="stylebox"></div>
-        <div class=" leftitem">
-            <h5><a class="">Address</a></h5>
-        </div>
-        <div class="leftitem">
-            <h5><a class="">Recentley Booked</a></h5>
-        </div>
-        <div class="leftitem"><a class="">Favorite Chef</a></div>
-        <div class="leftitem"><a class="">Donate For Charity</a></div>
-        <div class="leftitem"><a class=""> Your Friend</a></div>
-        <div class="leftitem"><a class="">Order History</a></div>
-        <div class="leftitem"><a class="">Report Us</a></div>
+        <div class=" leftitem"><a class="a" onClick="getclassname(this.getAttribute('class')); this.style.color='green';">Address</a></div>
+        <div class="leftitem"><a class="rb" onClick="getclassname(this.getAttribute('class'));">Recentley Booked</a></div>
+        <div class="leftitem"><a class="fc" onClick="getclassname(this.getAttribute('class'));">Favorite Chef</a></div>
+        <div class="leftitem"><a class="dfc" onClick="getclassname(this.getAttribute('class'));">Donate For Charity</a></div>
+        <div class="leftitem"><a class="yf" onClick="getclassname(this.getAttribute('class'));"> Your Friend</a></div>
+        <div class="leftitem"><a class="oh" onClick="getclassname(this.getAttribute('class'));">Order History</a></div>
+        <div class="leftitem"><a class="ru" onClick="getclassname(this.getAttribute('class'));">Report Us</a></div>
     </div>
-    </div>
+
     <!-- Modal HTML Markup -->
     <div id="ModalLoginForm" class="modal fade">
         <div class="modal-dialog" role="document">
@@ -148,24 +144,14 @@ $user = $result->fetch_assoc();
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+    <scrip src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></scrip>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous">
+        < /scrip> <
+        script src = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"
+        integrity = "sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK"
+        crossorigin = "anonymous" >
+    </script>
 </body>
 <script src="profile.js"></script>
 
 </html>
-
-
-<!-- position: absolute;
-top: 0px;
-width: 100%;
-height: 4rem;
-border-left: 3px solid rgb(237, 90, 107);
-transform: translateY(0%);
-background: linear-gradient(
-270deg
-, rgb(247, 235, 236) 0%, rgba(251, 246, 247, 0) 92.47%);
-opacity: 1;
-z-index: -1;
-transition: opacity 0.5s ease 0s, transform 0.5s ease 0s; -->
