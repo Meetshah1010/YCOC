@@ -12,7 +12,6 @@ $user = $result->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>
         Profile
@@ -62,12 +61,20 @@ $user = $result->fetch_assoc();
         <div class="profilebg">
             <?php
             echo '<div class="profileinfo">';
+            if($user['image']!=NULL){
+                echo '<img id="profileimg" src="data:image/jpeg;base64,'.base64_encode($user['image'] ).'" 
+                        alt="profile image" style="float: left;">';
+            }
+            else
+            {
+
             if ($user['image'] != NULL) {
                 echo '
                         <img id="profileimg" src="data:image/jpeg;base64,' . base64_encode($user['image']) . '" 
                         alt="profile image" style="float: left;">
                         ';
             } else {
+
                 echo '<img id="profileimg" alt="profile image" style="float: left;" src="../../assets/images/avtar.png"/>';
             }
             echo '<div class="overlay" style="opacity:1; top:51 important!; left:22 important!;">
@@ -114,20 +121,17 @@ $user = $result->fetch_assoc();
                 <div class="modal-body">
                     <form method="POST" action="updateuser.php">
                         <?php
-                        echo '
-                                    <div class="img-box" style="border:2px solid black">';
+                        echo '<div class="img-box" style="border:2px solid black">';
                         if ($user['image'] != NULL) {
                             echo '<img class="image" style=height:100px;width:100px;" class="zoomA" src="data:image/jpeg;base64,' . base64_encode($user['image']) . '" />';
                         } else {
                             echo '<img class="image" style="height:100px;width:100px;" src="profile.png"/>';
                         }
-
                         echo '<div class="overlay">
                             <div class="circle"></div>
                             <img class="svg" src="p.svg" style="">          
                                  </div>
-                        </div>
-                        ';
+                        </div>';
                         echo '<div class="form-group">
                                 <label class="control-label">Full Name</label>
                                 <input required type="text" value="' . $user['rname'] . '" class="form-control input-lg" name="rname">
@@ -154,5 +158,4 @@ $user = $result->fetch_assoc();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
 </body>
-
 </html>

@@ -143,14 +143,17 @@ $user = $result->fetch_assoc();
     <nav class="navbar navbar-expand-lg" style="border: 1px solid;">
         <a class="navbar-brand" style="color:black;" href="../../landing/landing.html">YCOC</a>
         <ul class="navbar-nav ml-auto" id="example" style="margin-right: 77px;">
-            <li class="nav-item">
-
-                <img src="../../assets/images/avtar.png" alt="" style="height: 30px; width:auto; margin-top:10px;">
-
-            </li>
-            <div class="nav-item">
-                <?php
-                echo '<a class="nav-link ml-1" href="#" style="color:black;"><b>' . $user['rname'] . '</b></a>';
+        <?php echo '
+            <li class="nav-item">';
+            if ($user['image'] != NULL) {
+               echo' <img class="image" style="height: 50px; width:50px;border:2px solid black; border-radius:50px; margin-top:10px;" class="zoomA" src="data:image/jpeg;base64,' . base64_encode($user['image']) . '" />';
+            } else {
+                echo '<img src="../../assets/images/avtar.png" alt="" style="height: 30px; width:auto; margin-top:10px;">';
+            }
+            echo '</li>';
+            echo'<div class="nav-item">
+                
+                    <a class="nav-link ml-1" href="#" style="color:black;"><b>' . $user['rname'] . '</b></a>';
                 ?>
 
             </div>
