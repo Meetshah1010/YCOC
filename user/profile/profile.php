@@ -66,11 +66,8 @@ $user = $result->fetch_assoc();
         <?php
             echo '<div class="profileinfo">';
             if($user['image']!=NULL){
-                echo '<div class="profilepicture">
-                        <img id="profileimg" src="data:image/jpeg;base64,'.base64_encode($user['image'] ).'" 
-                        alt="profile image" style="float: left;">
-                        <img class="overlay" style="float: left;" src="https://img.icons8.com/metro/26/000000/camera.png"/>
-                    </div>';
+                echo '<img id="profileimg" src="data:image/jpeg;base64,'.base64_encode($user['image'] ).'" 
+                        alt="profile image" style="float: left;">';
             }
             else
             {
