@@ -112,18 +112,19 @@ $user = $result->fetch_assoc();
                     <form method="POST" action="updateuser.php">
                         <?php
                         echo '
-                                    <div class="img-box" style="border:2px solid black">';
+                                <div class="img-box" style="border:2px solid black">';
                         if ($user['image'] != NULL) {
                             echo '<img class="image" style=height:100px;width:100px;" class="zoomA" src="data:image/jpeg;base64,' . base64_encode($user['image']) . '" />';
                         } else {
                             echo '<img class="image" style="height:100px;width:100px;" src="profile.png"/>';
                         }
 
-                        echo '<div class="overlay">
+                        echo '<a href="../changepic/changepic.html" target="_blank">
+                        <div class="overlay">
                             <div class="circle"></div>
-                            <img class="svg" src="p.svg" style="">          
+                            <img src="https://img.icons8.com/metro/26/000000/camera.png"/>
                                  </div>
-                        </div>
+                        </div></a>
                         ';
                         echo '<div class="form-group">
                                 <label class="control-label">Full Name</label>
