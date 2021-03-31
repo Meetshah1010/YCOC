@@ -129,11 +129,11 @@ $user = $result->fetch_assoc();
 
 
         .transform {
-            -webkit-transition: all 2s ease;
-            -moz-transition: all 2s ease;
-            -o-transition: all 2s ease;
-            -ms-transition: all 2s ease;
-            transition: all 2s ease;
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            transition: all 1s ease;
         }
 
         .transform-active {

@@ -70,7 +70,11 @@ $user = $result->fetch_assoc();
             } else {
                 echo '<img id="profileimg" alt="profile image" style="float: left;" src="../../assets/images/avtar.png"/>';
             }
-            echo '  <div style="margin-top:45px; margin-left:16px; float:right;">
+            echo '<div class="overlay" style="opacity:1; top:51 important!; left:22 important!;">
+                            <div class="circle"></div>
+                            <img class="svg" src="p.svg" style="">
+                            </div>  
+            <div style="margin-top:45px; margin-left:16px; float:right;">
                     <div class="cwhite" style="font-weight:bolder; font-size:22px;">' . $user['rname'] . '</div>
                     <div class="cwhite">' . $user['remail'] . '</div>
                     <div class="cwhite">' . $user['rlandmark'] . '</div>
