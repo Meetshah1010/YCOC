@@ -30,104 +30,167 @@ $user = $result->fetch_assoc();
 </head>
 
 <body>
-     <style>
+    <style>
         .bg-img {
 
-        background-image: url(dish.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        position: relative;
-        min-height: 300px;
+            background-image: url(dish.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            min-height: 300px;
 
 
         }
 
         .container-fluid {
-        position: absolute;
-        width: auto;
+            position: absolute;
+            width: auto;
         }
 
         .menudesign {
-        position: absolute;
-        top: 3rem;
-        right: 0px;
-        visibility: visible;
-        opacity: 1;
-        width: 14rem;
-        background: rgb(255, 255, 255);
-        border-radius: 8px;
-        box-shadow: rgb(28 28 28 / 15%) 0px 2px 8px;
-        transform: translate(-73px, 10px);
-        transition: transform 0.25s ease 0s, opacity 0.25s ease 0s;
-        overflow: hidden;
+            position: absolute;
+            top: 3rem;
+            right: 0px;
+            visibility: visible;
+            opacity: 1;
+            width: 14rem;
+            background: rgb(255, 255, 255);
+            border-radius: 8px;
+            box-shadow: rgb(28 28 28 / 15%) 0px 2px 8px;
+            transform: translate(-73px, 10px);
+            transition: transform 0.25s ease 0s, opacity 0.25s ease 0s;
+            overflow: hidden;
         }
 
         .show {
-        visibility: visible;
+            visibility: visible;
         }
 
         .hidden {
-        visibility: hidden;
+            visibility: hidden;
         }
 
         .list {
-        background-color: greenyellow;
+            background-color: greenyellow;
         }
 
         #menu div:hover {
-        background: rgb(232, 232, 232);
+            background: rgb(232, 232, 232);
         }
 
         #menu div {
 
-        padding: 0.3rem;
-        text-align: left;
+            padding: 0.3rem;
+            text-align: left;
         }
 
-        #menu {
-        overflow: hidden;
-        }
-        </style>
-                <nav class="navbar navbar-expand-lg" style="border: 1px solid;">
-                    <a class="navbar-brand" style="color:black;" href="../../landing/landing.html">YCOC</a>
-                   
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <?php
-                            echo '<a id="example" class="nav-link ml-1" href="#" style="color:black;"><b>' . $user['rname'] . '</b></a>';
-                            ?>
-                        </li><a id="example" class="nav-link ml-1" href="#" style="color:black;">
-                        </a>
-                    </ul>
-                    <a id="example" class="nav-link ml-1" href="#" style="color:black;">
+        /* arrow button animaton
+        @keyframes up {
+            from {
+                transform: rotate(180deg);
+            }
 
-                    </a>
-                </nav>
-                <div id="menu" class="menudesign">
-                    <div onClick="profile()" class="list">profile</div>
-                    <div class="list">settings</div>
-                    <div onClick="logout()" class="list">logout</div>
-                </div>
-                <script>
-                    const example = document.querySelector("#example");
-                    const menu = document.querySelector("#menu");
-                    console.log(example);
-                    example.addEventListener('click', () => {
-                        menu.classList.toggle("hidden");
-                    })
-                </script>
-                </a>
-               
+            to {
+                transform: rotate(0deg);
+            }
+        }
+
+        @keyframes down {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(-180deg);
+            }
+        }
+
+        .arrow {
+            animation-name: up;
+            animation-duration: 1s;
+            animation-direction: alternate;
+            /* animation-iteration-count: 1; */
+        /* animation-fill-mode: forwards;
+        }
+
+        /* .arrow-down {
+            animation-name: down;
+            animation-duration: 1s;
+            animation-direction: alternate;
+            /* animation-iteration-count: 1; */
+        /* animation-fill-mode: forwards; */
+        }
+
+        */ #menu {
+            overflow: hidden;
+        }
+
+
+
+        .transform {
+            -webkit-transition: all 2s ease;
+            -moz-transition: all 2s ease;
+            -o-transition: all 2s ease;
+            -ms-transition: all 2s ease;
+            transition: all 2s ease;
+        }
+
+        .transform-active {
+            transform: rotate(-180deg);
+        }
+    </style>
+    <nav class="navbar navbar-expand-lg" style="border: 1px solid;">
+        <a class="navbar-brand" style="color:black;" href="../../landing/landing.html">YCOC</a>
+        <ul class="navbar-nav ml-auto" id="example" style="margin-right: 77px;">
+            <li class="nav-item">
+
+                <img src="../../assets/images/avtar.png" alt="" style="height: 30px; width:auto; margin-top:10px;">
+
+            </li>
+            <div class="nav-item">
+                <?php
+                echo '<a class="nav-link ml-1" href="#" style="color:black;"><b>' . $user['rname'] . '</b></a>';
+                ?>
+
+            </div>
+            <div id="arrow" class="transform">
+                <img id="svg" src="arrow.png" alt="arrow" style="float: right; margin-top:15px;">
+            </div>
+
+        </ul>
+
+    </nav>
+    <div id="menu" class="menudesign hidden">
+        <div onClick="profile()" class="list">profile</div>
+        <div class="list">settings</div>
+        <div onClick="logout()" class="list">logout</div>
+    </div>
+
+    <script>
+        const example = document.querySelector("#example");
+        const menu = document.querySelector("#menu");
+        // const arrow = document.querySelector("#arrow");
+        // console.log(example);
+        example.addEventListener('click', () => {
+            menu.classList.toggle("hidden");
+            arrow.classList.toggle("transform-active");
+            $('.transform').toggleClass('transform-active');
+
+
+        })
+    </script>
+
+
 </body>
-<script>
+<!-- <script>
     const example = document.querySelector("#example");
     const menu = document.querySelector("#menu");
     console.log(example);
     example.addEventListener('click', () => {
-        menu.classList.toggle("hidden");
+        menu.classList.toggle("show");
     })
-</script>
+</script> -->
 
 
 </html>
