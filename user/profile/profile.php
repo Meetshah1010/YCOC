@@ -86,6 +86,7 @@ $user = $result->fetch_assoc();
     <!-- ////navbar ends left panel start -->
 
     <div class="leftpanel">
+        <div class="stylebox"></div>
         <div class=" leftitem">
             <h5><a class="">Address</a></h5>
         </div>
@@ -150,5 +151,20 @@ $user = $result->fetch_assoc();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
 </body>
+<script src="profile.js"></script>
 
 </html>
+
+
+<!-- position: absolute;
+top: 0px;
+width: 100%;
+height: 4rem;
+border-left: 3px solid rgb(237, 90, 107);
+transform: translateY(0%);
+background: linear-gradient(
+270deg
+, rgb(247, 235, 236) 0%, rgba(251, 246, 247, 0) 92.47%);
+opacity: 1;
+z-index: -1;
+transition: opacity 0.5s ease 0s, transform 0.5s ease 0s; -->
