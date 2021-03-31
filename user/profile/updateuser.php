@@ -8,14 +8,14 @@ if (isset($_SESSION['is_userlogin'])) {
 }
 if(isset($_REQUEST['update']))
 {
-    echo "Hey";
+    
     $rname = $_REQUEST['rname'];
     $rmob = $_REQUEST['rmob'];
     $rlandmark = $_REQUEST['rarea'];
     $sql = "UPDATE register SET rname='$rname', rmob='$rmob', rlandmark = '$rlandmark' WHERE remail = '$remail'";
     if($conn->query($sql)==TRUE)
     {
-        echo '<script>window.alertalert("Updated successfully")</script>';
+        echo '<script>window.alert("Updated successfully")</script>';
         echo '<script>location.href="profile.php"</script>';
     }
     else

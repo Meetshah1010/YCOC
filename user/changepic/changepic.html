@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Forgot Password
+        </title>
+    </head>
+    <style>
+    	body{
+    		font-family: Verdana, Geneva, Tahoma, sans-serif;
+    	}
+    	.container{
+    		position: absolute;
+    		background-color:#edfcf0;
+    		align-items: center;
+    		text-align: center;
+    		padding: 50px;
+    		margin-left: 25%;
+    		margin-top: 10%;
+    	}
+    	input{
+    		color: black;
+    		font-size: 13px;
+    		height: 35px;
+    		 border: 1px solid gainsboro;
+            border-radius: 2px;
+    	}
+    	.success{
+    		margin-top: 40px;
+            color: white;
+            background-color: #eb9050;
+            border: none;
+            border-radius: 30px;
+            width: 200px;
+            height: 50px;
+            font-size: 17px;
+            font-weight: bold;
+    	}
+    </style>
+    <body>
+    	<div class="container">
+    		<h3>Upload a new Profile Picture of yours</h3>
+            <form action="changepic.php" method="POST" enctype="multipart/form-data">
+                <input type="file" name="img"><br>
+                <input class="success" name="update" type="submit" value="Upload a photo">
+            </form>
+    	</div>
+    </body>
+</html>
