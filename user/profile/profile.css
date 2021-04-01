@@ -12,6 +12,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    filter: blur(2px);
     /* background-position: 10% 65%; */
     /* position: absolute; */
 }
