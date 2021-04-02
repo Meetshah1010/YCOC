@@ -21,6 +21,7 @@ if(isset($_REQUEST['update']))
     {
         echo '<script>window.alert("Updated successfully")</script>';
         echo '<script>location.href="../profile/profile.php"</script>';
+        
     }
     else
     {
