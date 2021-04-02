@@ -145,8 +145,10 @@ $user = $result->fetch_assoc();
         <ul class="navbar-nav ml-auto" id="example" style="margin-right: 77px;">
         <?php echo '
             <li class="nav-item">';
-            if ($user['image'] != NULL) {
-               echo' <img class="image" style="height: 50px; width:50px;border:2px solid black; border-radius:50px; margin-top:10px;" class="zoomA" src="data:image/jpeg;base64,' . base64_encode($user['image']) . '" />';
+            if ($user['img'] != NULL) {
+               echo' <img class="image" style="height: 50px; width:50px;border:2px solid black; 
+               border-radius:50px; margin-top:10px;" class="zoomA" 
+               src="data:image/jpeg;base64,' . base64_encode($user['img']) . '" />';
             } else {
                 echo '<img src="../../assets/images/avtar.png" alt="" style="height: 30px; width:auto; margin-top:10px;">';
             }

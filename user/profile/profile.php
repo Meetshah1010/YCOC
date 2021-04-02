@@ -39,9 +39,9 @@ $user = $result->fetch_assoc();
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <?php
-                if ($user['image'] != NULL) {
+                if ($user['img'] != NULL) {
                     echo '<img  style="border: 1px solid; border-radius:30px; white;height:50px;width:50px;" class="zoomA" 
-                        src="data:image/jpeg;base64,' . base64_encode($user['image']) . '" />';
+                        src="data:image/jpeg;base64,' . base64_encode($user['img']) . '" />';
                 } else {
 
                     echo '<img id="profileimg" alt="profile image"
@@ -62,9 +62,9 @@ $user = $result->fetch_assoc();
         <div class="profilebg">
             <?php
             echo '<div class="profileinfo">';
-            if ($user['image'] != NULL) {
+            if ($user['img'] != NULL) {
                 echo '
-                        <img id="profileimg" src="data:image/jpeg;base64,' . base64_encode($user['image']) . '" 
+                        <img id="profileimg" src="data:image/jpeg;base64,' . base64_encode($user['img']) . '" 
                         alt="profile image" style="float: left;">
                         ';
             } else {
@@ -110,8 +110,9 @@ $user = $result->fetch_assoc();
                         <?php
                         echo '
                                 <div class="img-box" style="border:2px solid black">';
-                        if ($user['image'] != NULL) {
-                            echo '<img class="image" style=height:100px;width:100px;" class="zoomA" src="data:image/jpeg;base64,' . base64_encode($user['image']) . '" />';
+                        if ($user['img'] != NULL) {
+                            echo '<img class="image" style=height:100px;width:100px;" class="zoomA" 
+                            src="data:image/jpeg;base64,' . base64_encode($user['img']) . '" />';
                         } else {
                             echo '<img class="image" style="height:100px;width:100px;" src="profile.png"/>';
                         }

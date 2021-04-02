@@ -16,16 +16,16 @@ $file = addslashes(file_get_contents($_FILES["img"]["tmp_name"]));
 if(isset($_REQUEST['update']))
 {
     
-    $sql="INSERT INTO  register(img) VALUES ('$file') WHERE remail = '$remail'";
+    $sql="UPDATE register SET img = '".$file."' WHERE remail = '" . $remail . "'";;
     if($conn->query($sql)==TRUE)
     {
         echo '<script>window.alert("Updated successfully")</script>';
-        
+        echo '<script>location.href="../profile/profile.php"</script>';
     }
     else
     {
         echo '<script>window.alert("Sorry!We are unable to update your request please try after sometimes")</script>';
-        
+        echo '<script>location.href="../profile/profile.php"</script>';
     }
 }
 ?>
