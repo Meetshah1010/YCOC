@@ -12,7 +12,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    filter: blur(2px);
+    /* filter: blur(2px); */
     /* background-position: 10% 65%; */
     /* position: absolute; */
 }
@@ -45,9 +45,13 @@
 .edit {
     background-color: rgb(237, 90, 107);
     padding: 11px;
+    padding-left: 16px;
     color: white;
     border-radius: 10px;
     border: none;
+}
+.edit:hover >#editicon {
+right: 0px;
 }
 .edit:hover{
     background-color: rgb(236, 70, 84);
