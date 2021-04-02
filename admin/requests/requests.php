@@ -136,8 +136,9 @@ else
 						$del = "DELETE FROM cook_request WHERE crid = {$_REQUEST['crid']}";
 						if($conn->query($del)==TRUE)
 						{
+							$mailbody = "Hello, ".$cname." Welcome to YCOC society your Cook id is ".$cid."  for log in as a cook go to this  url :  http://localhost/de/cook/login/login.php greetigs from YCOC team 😋";
 							echo '<meta http-equiv="refresh" content="1">';
-							echo '<a id="mail" href="mailto:<?php echo $cemail;<?>">Click here</a>';
+							echo '<script>location.href="mailto:'.$cemail.'?body='.$mailbody.'&subject=To accept your request at YCOC"</script>';
 						}
 						else
 						{
