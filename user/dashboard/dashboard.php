@@ -11,7 +11,6 @@ $result = $conn->query($sql);
 $user = $result->fetch_assoc();
 ?>
 <!DOCTYPE html>
-<html>
 
 <head>
     <title>
@@ -27,6 +26,7 @@ $user = $result->fetch_assoc();
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="dashboard.js"></script>
     <link rel="stylesheet" href="dashboard.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 
 <body>
@@ -140,23 +140,23 @@ $user = $result->fetch_assoc();
             transform: rotate(-180deg);
         }
     </style>
-    <nav class="navbar navbar-expand-lg" style="border: 1px solid;">
+    <!-- <nav class="navbar navbar-expand-lg" style="border: 1px solid;">
         <a class="navbar-brand" style="color:black;" href="../../landing/landing.html">YCOC</a>
         <ul class="navbar-nav ml-auto" id="example" style="margin-right: 77px;">
-        <?php echo '
+            <?php echo '
             <li class="nav-item">';
             if ($user['img'] != NULL) {
-               echo' <img class="image" style="height: 50px; width:50px;border:2px solid black; 
+                echo ' <img class="image" style="height: 50px; width:50px;border:2px solid black; 
                border-radius:50px; margin-top:10px;" class="zoomA" 
                src="data:image/jpeg;base64,' . base64_encode($user['img']) . '" />';
             } else {
                 echo '<img src="../../assets/images/avtar.png" alt="" style="height: 30px; width:auto; margin-top:10px;">';
             }
             echo '</li>';
-            echo'<div class="nav-item">
+            echo '<div class="nav-item">
                 
                     <a class="nav-link ml-1" href="#" style="color:black;"><b>' . $user['rname'] . '</b></a>';
-                ?>
+            ?>
 
             </div>
             <div id="arrow" class="transform">
@@ -165,7 +165,10 @@ $user = $result->fetch_assoc();
 
         </ul>
 
-    </nav>
+    </nav> -->
+
+    <?php $IPATH = $_SERVER["DOCUMENT_ROOT"] . "/user/";
+    include($IPATH . "navigationbar.html"); ?>
     <div id="menu" class="menudesign hidden">
         <div onClick="profile()" class="list">profile</div>
         <div class="list">settings</div>
@@ -181,9 +184,10 @@ $user = $result->fetch_assoc();
             menu.classList.toggle("hidden");
             arrow.classList.toggle("transform-active");
             $('.transform').toggleClass('transform-active');
-
-
-        })
+        });
+        $(function() {
+            $("#nbar").load("nav.html");
+        });
     </script>
 
 

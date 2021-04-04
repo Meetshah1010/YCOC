@@ -44,15 +44,15 @@ function getclassname(classname) {
     // change color function
     function changetextcolor(oldclass, classname) {
         document.querySelector('.' + oldclass).removeAttribute("style");
-        document.querySelector('.' + classname).setAttribute("style", "color:red");
+        document.querySelector('.' + classname).setAttribute("style", "color:rgb(237, 90, 107)");
         globaloldclass = classname;
-        console.log("after clling function");
-        console.log("oldclass " + globaloldclass);
-        console.log("newclass " + classname);
+        // console.log("after clling function");
+        // console.log("oldclass " + globaloldclass);
+        // console.log("newclass " + classname);
     }
-    console.log("before function calling");
-    console.log("oldclass " + globaloldclass);
-    console.log("newclass " + classname);
+    // console.log("before function calling");
+    // console.log("oldclass " + globaloldclass);
+    // console.log("newclass " + classname);
     changetextcolor(globaloldclass, classname);
 
 
