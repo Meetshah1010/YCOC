@@ -167,7 +167,7 @@ $user = $result->fetch_assoc();
 
     </nav> -->
 
-    <?php $IPATH = $_SERVER["DOCUMENT_ROOT"] . "/user/";
+    <?php $IPATH = $_SERVER["DOCUMENT_ROOT"] . "/de/user/";
     include($IPATH . "navigationbar.html"); ?>
     <div id="menu" class="menudesign hidden">
         <div onClick="profile()" class="list">profile</div>
