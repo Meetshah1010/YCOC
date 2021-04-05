@@ -113,6 +113,55 @@ $user = $result->fetch_assoc();
             </div>
             </div>
 
+            </ul>
+
+            </nav> -->
+
+            <!-- <?php $IPATH = $_SERVER["DOCUMENT_ROOT"] . "/user/";
+                    include($IPATH . "navigationbar.html"); ?> -->
+            <nav class="navbar navbar-expand-lg" style="border: 1px solid;">
+                <a class="navbar-brand" style="color:black;" href="../../landing/landing.html">YCOC</a>
+                <ul class="navbar-nav ml-auto" id="example" style="margin-right: 77px;">
+                    <?php echo '
+            <li class="nav-item">';
+                    if ($user['img'] != NULL) {
+                        echo ' <img class="image" style="height: 50px; width:50px;border:2px solid black; 
+               border-radius:50px; margin-top:10px;" class="zoomA" 
+               src="data:image/jpeg;base64,' . base64_encode($user['img']) . '" />';
+                    } else {
+                        echo '<img src="../../assets/images/avtar.png" alt="" style="height: 30px; width:auto; margin-top:10px;">';
+                    }
+                    echo '</li>';
+                    echo '<div class="nav-item">
+                
+                    <a class="nav-link ml-1" href="#" style="color:black;"><b>' . $user['rname'] . '</b></a>';
+                    ?>
+
+                    </div>
+                    <div id="arrow" class="transform">
+                        <img id="svg" src="arrow.png" alt="arrow" style="float: right; margin-top:15px;">
+                    </div>
+
+                </ul>
+
+            </nav>
+            <div id="menu" class="menudesign hidden">
+                <div onClick="profile()" class="list">profile</div>
+                <div class="list">settings</div>
+                <div onClick="logout()" class="list">logout</div>
+            </div>
+
+            <script>
+                const example = document.querySelector("#example");
+                const menu = document.querySelector("#menu");
+                // const arrow = document.querySelector("#arrow");
+                // console.log(example);
+                example.addEventListener('click', () => {
+                    menu.classList.toggle("hidden");
+                    arrow.classList.toggle("transform-active");
+                    $('.transform').toggleClass('transform-active');
+                });
+            </script>
 
 
 
