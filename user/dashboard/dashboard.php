@@ -24,9 +24,9 @@ $user = $result->fetch_assoc();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/custom.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src="dashboard.js"></script>
+    
     <link rel="stylesheet" href="dashboard.css">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
@@ -139,6 +139,9 @@ $user = $result->fetch_assoc();
         .transform-active {
             transform: rotate(-180deg);
         }
+        .dishid{
+            display:none;
+        }
     </style>
     <!-- <nav class="navbar navbar-expand-lg" style="border: 1px solid;">
         <a class="navbar-brand" style="color:black;" href="../../landing/landing.html">YCOC</a>
@@ -175,6 +178,103 @@ $user = $result->fetch_assoc();
         <div onClick="logout()" class="list">logout</div>
     </div>
 
+
+
+
+
+
+
+    <div class="container mainmenu">
+        <!-- Default dropright button -->
+       
+        <div class="food">
+            <div class="btn-group dropright">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    food type 
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item" type="button" onclick="getmenu(this.innerText);">chinese</button>
+                    <button class="dropdown-item" type="button" onclick="getmenu(this.innerText);">punjabi</button>
+                    <button class="dropdown-item" type="button" onclick="getmenu(this.innerText);">southindian</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chinese dishid">
+            <div class="btn-group dropright">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    chinese
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item" type="button">noodles</button>
+                    <button class="dropdown-item" type="button">manchurian</button>
+                    <button class="dropdown-item" type="button">momos</button>
+                    <button class="dropdown-item" type="button">chowmin</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="punjabi dishid">
+            <div class="btn-group dropright">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    punjabi
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item" type="button">parotaha</button>
+                    <button class="dropdown-item" type="button">lassi</button>
+                    <button class="dropdown-item" type="button">butter nan</button>
+                </div>
+            </div>
+        </div>
+        <div class="southindian dishid">
+            <div class="btn-group dropright">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    south indian 
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item" type="button">idli</button>
+                    <button class="dropdown-item" type="button">dosa</button>
+                    <button class="dropdown-item" type="button">uttapam</button>
+                </div>
+            </div>
+        </div>
+            
+        <div class="gender">
+            <h2>please select cook gender:-</h2>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+            </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
         const example = document.querySelector("#example");
         const menu = document.querySelector("#menu");
@@ -189,7 +289,7 @@ $user = $result->fetch_assoc();
             $("#nbar").load("nav.html");
         });
     </script>
-
+<script src="dashboard.js"></script>
 
 </body>
 <!-- <script>

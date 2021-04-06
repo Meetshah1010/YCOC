@@ -157,3 +157,9 @@
         .transform-active {
             transform: rotate(-180deg);
         }
+    .mainmenu{
+        float: right;
+    }
+    .mainmenu>div{
+        margin-bottom: 13px;
+    }
