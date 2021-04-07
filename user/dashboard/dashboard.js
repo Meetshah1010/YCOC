@@ -9,20 +9,24 @@ function profile(){
 }
 
 var oldmenu=".punjabi";
-function getmenu(menu){
-
-    console.log("get menu function is called");
+function getmenu(menu,p){
+    document.querySelector('#catbtn').innerText=menu;
+    // document.querySelector('.'+ menu).parentNode.firstElementChild.firstElementChild.firstElementChild.innerText=menu;
+    
+  
+    // console.log("get menu function is called");
 // menu=String('.'+menu);    
 // console.log(typeof(menu));
     
     menuname=document.querySelector('.'+ menu);
-    console.log(menuname);
+    // console.log(menuname);
     // console.log(oldmenu);
+    
+    
     document.querySelector(this.oldmenu).classList.add("dishid");
     menuname.classList.remove("dishid");
 
     this.oldmenu=String('.'+menu);
-    
     // console.log(menuname);
     
 }

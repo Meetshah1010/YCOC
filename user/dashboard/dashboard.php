@@ -30,119 +30,7 @@ $user = $result->fetch_assoc();
 </head>
 
 <body>
-    <style>
-        .bg-img {
-
-            background-image: url(dish.png);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            position: relative;
-            min-height: 300px;
-
-
-        }
-
-        .container-fluid {
-            position: absolute;
-            width: auto;
-        }
-
-        .menudesign {
-            position: absolute;
-            top: 3rem;
-            right: 0px;
-            visibility: visible;
-            opacity: 1;
-            width: 14rem;
-            background: rgb(255, 255, 255);
-            border-radius: 8px;
-            box-shadow: rgb(28 28 28 / 15%) 0px 2px 8px;
-            transform: translate(-73px, 10px);
-            transition: transform 0.25s ease 0s, opacity 0.25s ease 0s;
-            overflow: hidden;
-        }
-
-        .show {
-            visibility: visible;
-        }
-
-        .hidden {
-            visibility: hidden;
-        }
-
-        .list {
-            background-color: greenyellow;
-        }
-
-        #menu div:hover {
-            background: rgb(232, 232, 232);
-        }
-
-        #menu div {
-
-            padding: 0.3rem;
-            text-align: left;
-        }
-
-        /* arrow button animaton
-        @keyframes up {
-            from {
-                transform: rotate(180deg);
-            }
-
-            to {
-                transform: rotate(0deg);
-            }
-        }
-
-        @keyframes down {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(-180deg);
-            }
-        }
-
-        .arrow {
-            animation-name: up;
-            animation-duration: 1s;
-            animation-direction: alternate;
-            /* animation-iteration-count: 1; */
-        /* animation-fill-mode: forwards;
-        }
-
-        /* .arrow-down {
-            animation-name: down;
-            animation-duration: 1s;
-            animation-direction: alternate;
-            /* animation-iteration-count: 1; */
-        /* animation-fill-mode: forwards; */
-        }
-
-        */ #menu {
-            overflow: hidden;
-        }
-
-
-
-        .transform {
-            -webkit-transition: all 1s ease;
-            -moz-transition: all 1s ease;
-            -o-transition: all 1s ease;
-            -ms-transition: all 1s ease;
-            transition: all 1s ease;
-        }
-
-        .transform-active {
-            transform: rotate(-180deg);
-        }
-        .dishid{
-            display:none;
-        }
-    </style>
+    
     <!-- <nav class="navbar navbar-expand-lg" style="border: 1px solid;">
         <a class="navbar-brand" style="color:black;" href="../../landing/landing.html">YCOC</a>
         <ul class="navbar-nav ml-auto" id="example" style="margin-right: 77px;">
@@ -186,16 +74,24 @@ $user = $result->fetch_assoc();
 
     <div class="container mainmenu">
         <!-- Default dropright button -->
-       
+    <form action="" method="post">
+    <div>
+        <h5>Address</h5>
+    <input type="text" name="address" id="address" placeholder="venue Address">
+    </div>    
+    <div>
+        <h5>Booking date</h5>
+    <input type="date" name="date" id="date">
+    </div>
         <div class="food">
             <div class="btn-group dropright">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="catbtn">
                     food type 
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <button class="dropdown-item" type="button" onclick="getmenu(this.innerText);">chinese</button>
-                    <button class="dropdown-item" type="button" onclick="getmenu(this.innerText);">punjabi</button>
-                    <button class="dropdown-item" type="button" onclick="getmenu(this.innerText);">southindian</button>
+                    <button class="dropdown-item" type="button" onclick="getmenu(this.innerText,this);">chinese</button>
+                    <button class="dropdown-item" type="button" onclick="getmenu(this.innerText,this);">punjabi</button>
+                    <button class="dropdown-item" type="button" onclick="getmenu(this.innerText,this);">southindian</button>
                 </div>
             </div>
         </div>
@@ -203,7 +99,7 @@ $user = $result->fetch_assoc();
         <div class="chinese dishid">
             <div class="btn-group dropright">
                 <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    chinese
+                    food-item
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                     <button class="dropdown-item" type="button">noodles</button>
@@ -217,7 +113,7 @@ $user = $result->fetch_assoc();
         <div class="punjabi dishid">
             <div class="btn-group dropright">
                 <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    punjabi
+                    food-item
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                     <button class="dropdown-item" type="button">parotaha</button>
@@ -229,7 +125,7 @@ $user = $result->fetch_assoc();
         <div class="southindian dishid">
             <div class="btn-group dropright">
                 <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    south indian 
+                    food-item 
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                     <button class="dropdown-item" type="button">idli</button>
@@ -246,9 +142,10 @@ $user = $result->fetch_assoc();
             <input type="radio" id="female" name="gender" value="female">
             <label for="female">Female</label><br>
             </div>
+            <b><label>Would u like to give suggestions</label></b><br>
+            <textarea name="suggestion" id="" cols="50" rows="5" maxlength="100" placeholder="suggestion box..." ></textarea>
 
-
-
+    </form>
 
 
     </div>

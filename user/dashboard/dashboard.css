@@ -160,6 +160,10 @@
     .mainmenu{
         float: right;
     }
-    .mainmenu>div{
+    .mainmenu>form>div{
         margin-bottom: 13px;
+    }
+
+    .dishid{
+        display:none;
     }
