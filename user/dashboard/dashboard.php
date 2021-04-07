@@ -89,51 +89,21 @@ $user = $result->fetch_assoc();
                     food type 
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <button class="dropdown-item" type="button" onclick="getmenu(this.innerText,this);">chinese</button>
-                    <button class="dropdown-item" type="button" onclick="getmenu(this.innerText,this);">punjabi</button>
-                    <button class="dropdown-item" type="button" onclick="getmenu(this.innerText,this);">southindian</button>
+                     <?php
+                    $sql = "SELECT DISTINCT cspec FROM cook";
+                    $result=$conn->query($sql);
+                    while($food = $result->fetch_assoc())
+                    {
+                        echo '<button class="dropdown-item" type="button" onclick="getmenu(this.innerText,this);">'.$food['cspec'].'</button>';
+                    }
+                    echo '<button class="dropdown-item" type="button" onclick="getmenu(this.innerText,this);">Others</button>';
+                    ?>
                 </div>
             </div>
         </div>
-        
-        <div class="chinese dishid">
-            <div class="btn-group dropright">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    food-item
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <button class="dropdown-item" type="button">noodles</button>
-                    <button class="dropdown-item" type="button">manchurian</button>
-                    <button class="dropdown-item" type="button">momos</button>
-                    <button class="dropdown-item" type="button">chowmin</button>
-                </div>
-            </div>
-        </div>
-        
-        <div class="punjabi dishid">
-            <div class="btn-group dropright">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    food-item
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <button class="dropdown-item" type="button">parotaha</button>
-                    <button class="dropdown-item" type="button">lassi</button>
-                    <button class="dropdown-item" type="button">butter nan</button>
-                </div>
-            </div>
-        </div>
-        <div class="southindian dishid">
-            <div class="btn-group dropright">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    food-item 
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <button class="dropdown-item" type="button">idli</button>
-                    <button class="dropdown-item" type="button">dosa</button>
-                    <button class="dropdown-item" type="button">uttapam</button>
-                </div>
-            </div>
-        </div>
+        <?php
+        include('dishname.php');
+        ?>
             
         <div class="gender">
             <h2>please select cook gender:-</h2>
