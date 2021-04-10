@@ -104,6 +104,12 @@ $user = $result->fetch_assoc();
         <?php
         include('dishname.php');
         ?>
+
+        <div class="hiddeninputs">
+        <input type="text" name="catagory" id="cat">
+        <input type="text" name="list" id="lst">
+
+        </div>
             
         <div class="gender">
             <h2>please select cook gender:-</h2>
@@ -119,6 +125,7 @@ $user = $result->fetch_assoc();
 
 
     </div>
+
 
 
 
