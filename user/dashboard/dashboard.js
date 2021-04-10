@@ -9,6 +9,7 @@ function profile(){
 }
 
 var oldmenu=".punjabi";
+var cat=document.querySelector('#cat');
 function getmenu(menu,p){
     document.querySelector('#catbtn').innerText=menu;
     // document.querySelector('.'+ menu).parentNode.firstElementChild.firstElementChild.firstElementChild.innerText=menu;
@@ -28,5 +29,6 @@ function getmenu(menu,p){
 
     this.oldmenu=String('.'+menu);
     // console.log(menuname);
-    
+    console.log(this.cat);
+    this.cat.setAttribute("value",menu);
 }
