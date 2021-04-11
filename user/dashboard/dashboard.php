@@ -78,14 +78,15 @@ $user = $result->fetch_assoc();
 
     <div class="container mainmenu">
         <!-- Default dropright button -->
-    <form action="" method="post">
+    <form action="../orderprocess/orderprocess.php" method="POST">
     <div>
         <h5>Address</h5>
     <input type="text" name="address" id="address" placeholder="venue Address">
     </div>    
     <div>
         <h5>Booking date</h5>
-    <input type="date" name="date" id="date">
+    <input type="date" name="odate" id="date">
+    <input type="time" name="otime" id="otime">
     </div>
     <h5>Select Cusine </h5>
         <div class="food">
@@ -106,6 +107,7 @@ $user = $result->fetch_assoc();
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
         <div id="pop">
             </div>
         <label for="">this below inputs are to be made hidden using display:hidden</label>
@@ -122,6 +124,16 @@ $user = $result->fetch_assoc();
         
         
         
+=======
+        <?php
+        include('dishname.php');
+        ?>
+
+       
+           
+
+            
+>>>>>>> e3a92a61070725f9e6e1af8b08cfcc1fd3f0206c
         <div class="gender">
             <h2>please select cook gender:-</h2>
             <input type="radio" id="male" name="gender" value="male">
@@ -131,8 +143,15 @@ $user = $result->fetch_assoc();
             </div>
             <b><label>Would u like to give suggestions</label></b><br>
             <textarea name="suggestion" id="" cols="50" rows="5" maxlength="100" placeholder="suggestion box..." ></textarea>
-
-    </form>
+            <input type="hidden" name="catagory" id="cat">
+            <input type="hidden" name="list" id="lst">
+            <input type="hidden" name="adr">
+            <input type="hidden" name="date">
+            <?php
+            echo '<input type="hidden" value="'.$user['id'].'" name="uid">';
+            ?><br>
+            <input type="submit" value="Submit">
+        </form>
 
 
     </div>

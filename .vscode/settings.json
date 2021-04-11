@@ -1,6 +1,6 @@
 {
     "svg.preview.background": "transparent",
-    "workbench.sideBar.location": "right",
+    "workbench.sideBar.location": "left",
     "editor.wordWrap": "on",
     "editor.mouseWheelZoom": true
 }
