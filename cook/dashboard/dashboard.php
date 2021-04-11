@@ -7,9 +7,14 @@ if(isset($_SESSION['is_cooklogin']))
     $sql = "SELECT * FROM cook WHERE cemail = '$cemail'";
     $result = $conn->query($sql);
     $cook = $result->fetch_assoc();
+    $cid = $cook['cid'];
+    $cavailablity = $cook['available'];
     $img = "SELECT * FROM images WHERE mail='$cemail'";
     $res=$conn->query($img);
     $image=$res->fetch_assoc();
+    $sql = "SELECT * FROM o_details WHERE cid = $cook[cid]";
+    $resultorder=$conn->query($sql);
+    $number = $resultorder->num_rows;
 }
 else
 {
@@ -23,6 +28,7 @@ else
             Cook Panel
         </title>
         <meta charset="utf-8">
+        <meta http-equiv="refresh" content="10">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet"  href="../../assets/css/bootstrap.min.css">
@@ -47,6 +53,52 @@ else
                     echo '<a class="nav-link ml-1" href="../profile/profile.php" style="color:black;"><b> Hello, '.$cook['cname'].'</b></p>';
                 ?>
                 </li>
+                <li class="nav-item">
+                <?php
+                date_default_timezone_set('Asia/Kolkata');
+                    $current_hour = date("H");
+                    echo $current_hour;
+                    $current_date = date("d");
+                    if($resultorder->num_rows>0){
+                        while($order = $resultorder->fetch_assoc())
+                        {
+                            $string = $order['date'];
+                            $date = DateTime::createFromFormat("Y-m-d", $string);
+                            $order_date = $date->format("d");
+                            if($order_date==$current_date)
+                            {
+                                $string2=strtotime($order['time']);
+                                $order_time =  date('H',$string2);
+                                $spare_time = $order_time-$current_hour;
+                                echo $order_time;
+                                echo $current_hour;
+                                echo $spare_time;
+                                if($spare_time<=1)
+                                {
+                                    echo "busy";
+                                    $sql = "UPDATE `cook` SET `available` = '1' WHERE `cook`.`cid` = '$cid'";
+                                }
+                                else
+                                {
+                                    $sql = "UPDATE `cook` SET `available` = '0' WHERE `cook`.`cid` = '$cid'";
+                                    echo "free";
+                                }
+                            }
+                            else
+                            {
+                                
+                            }
+                        }
+                    }
+                    if($cavailablity==0)
+                    {
+                        echo '<p>You are Free</p>';
+                    }
+                    else{
+                        echo '<p style="color:red">You have to  order </p>';
+                    }
+                ?>
+                </li>
             </ul>
           </nav>
           <div class="container-fluid" style=""></div>
@@ -54,9 +106,9 @@ else
                   <nav class="col-sm-2 sidebar" style="background-color:#D4E8FF"><!-- start side bar 1st column-->
                       <div class="sidebar-sticky">
                           <ul class="nav flex-column" style="font-weight: bold;">
-                              <li class="nav-item" ><a class="nav-link bg-primary" style="color: black;" href="dashboard.php"><img src="https://img.icons8.com/metro/24/000000/dashboard.png"/> Dashboard </a></li>
+                              <li class="nav-item" ><a class="nav-link bg-primary" style="color: white;" href="dashboard.php"><img src="https://img.icons8.com/metro/24/000000/dashboard.png"/> Dashboard </a></li>
                               <li class="nav-item"><a class="nav-link" style="color: black;" href="../profile/profile.php"><img src="https://img.icons8.com/small/24/000000/gender-neutral-user.png"/> Profile </a></li>
-                              <li class="nav-item"><a class="nav-link" href="../cook/cook.php"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/chef-hat.png"/> Chef </a></li>
+                              <li class="nav-item"><a class="nav-link" style="color:black;" href="../calls/calls.php"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/chef-hat.png"/> Calls </a></li>
                               <li class="nav-item"><a class="nav-link" href="workreport.php"><img src="https://img.icons8.com/material-rounded/24/000000/business-report.png"/> Work Report</a></li>
                               <li class="nav-item"><a class="nav-link" href="../changepassword.php"><img src="https://img.icons8.com/android/24/000000/key.png"/>Change Password</a></li>
                               <li class="nav-item"><a class="nav-link"  style="color: black;" href="../logout.php"><img src="https://img.icons8.com/metro/24/000000/export.png"/> Log Out</a></li>
@@ -69,7 +121,9 @@ else
                               <div class="card text-white bg-warning mb-3">
                                   <div class="card-header"> Notifications </div>
                                   <div class="card-body"></div>
-                                  <h4 class="card-title"><?php echo '2'?></h4>
+                                  <h4 class="card-title"><?php
+                                  echo $number;
+                                  ?></h4>
                                   <a class="btn text-white" href="../requests/requests.php">View</a>
                               </div>
                           </div>
@@ -92,36 +146,40 @@ else
                       </div>	
                       <div class="mx-5 mt-5 text-center">
                           <p class="bg-dark text-white">List of Calls</p>
-                      <?php
-                          $sql = "SELECT * FROM cook_request ";
-                          $result = $conn->query($sql);
-                          if($result->num_rows > 0)
+                          <?php
+                          if($resultorder->num_rows>0)
                           {
-                              echo'<table class="table">
-                                  <thead>
-                                      <tr>
-                                          <th scope="col">Requester ID</th>
-                                          <th scope="col">Name</th>
-                                          <th scope="col">Email</th>
-                                      </tr>
-                                  </thead>
-                                  <tbody>';
-                                  while ($row = $result->fetch_assoc())
-                                   {
-                                  echo'<tr>';
-                                          echo '<td>'.$row["crid"].'</td>';
-                                          echo '<td>'.$row["crname"].'</td>';
-                                          echo '<td>'.$row["cremail"].'</td>';
-                                  echo'</tr>';
-                                  }
-                                  echo '</tbody>
-                              </table>';
-                          }
-                          else
-                          {
-                              echo '0 Results'; 
-                          }
-                      ?>
+                            echo'<table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Order ID</th>
+                                    <th scope="col">Dish Name</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Call Date</th>
+                                    <th scope="col">Call Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>';
+                            $sql = "SELECT * FROM o_details WHERE cid = $cook[cid]";
+                            $result=$conn->query($sql);
+                            while ($order = $result->fetch_assoc())
+                             {
+                            echo'<tr>';
+                                    echo '<td>'.$order["oid"].'</td>';
+                                    echo '<td>'.$order["dish_name"].'</td>';
+                                    echo '<td>'.$order["address"].'</td>';
+                                    echo '<td>'.$order["date"].'</td>';
+                                    echo '<td>'.$order["time"].'</td>';
+                            echo'</tr>';
+                            }
+                            echo '</tbody>
+                        </table>';
+                    }
+                    else
+                    {
+                        echo '0 Results'; 
+                    }
+                          ?>
                       </div>		
                   </div>
                   <!--  end profile area 2nd column-->
