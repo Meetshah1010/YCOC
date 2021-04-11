@@ -136,13 +136,23 @@ $image = $result->fetch_assoc();
                   <hr>
                   <div class="row">
                     <?php
-                    $sql = "INSERT INTO order_details(food_type,dish_name,uid,uname,umob,address,date,time,cid,cname,comb) VALUE('$spec','$dish','$uid','$uname','$umob','$addr','$odate','$otime','$cid','$cname','$cmob') ";
-                    if($sql==TRUE)
+                    $sql = "INSERT INTO `o_details` (`food_type`, `dish_name`, `uid`, `uname`, `umob`, `address`, `date`, `time`, `suggestion`, `cid`, `cname`, `cmob`) VALUES ( '$spec', '$dish', '$uid', '$uname', '$umob', '$addr', '$odate', '$otime', '$suggestion', '$cid', '$cname', '$cmob ')";
+                    if($conn->query($sql)==TRUE)
                     {
-                      echo "Success";
-                    }
+                     /* $sql2="UPDATE cook SET available='1' WHERE cid = '$cid'";
+                      if($conn->query($sql2)==TRUE)
+                      {
+                        echo "<script>window.alert('Thanks to trust on us $uname your cook $cname will come to $addr at $odate Thanks')</script>
+                        <script>location.href='../dashboard/dashboard.php'</script>";
+                      }
+                      else{
+                        echo '<script>window.alert("Sorry we are unable to accept your order at this time please try again later")</script>';
+                      }
+                    }*/echo "<script>window.alert('Thanks to trust on us $uname your cook $cname will come to $addr at $odate Thanks')</script>
+                    <script>location.href='../dashboard/dashboard.php'</script>";
+                  }
                     else{
-                      echo "Failed";
+                      echo '<script>window.alert("Sorry we are unable to accept your order at this time please try again later")</script>';
                     }
                     ?>
                   </div>

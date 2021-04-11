@@ -111,8 +111,8 @@ $user = $result->fetch_assoc();
             </div>
         <label for="">this below inputs are to be made hidden using display:hidden</label>
         <div class="hiddeninputs">
-        <input type="text" name="catagory" id="cat">
-        <input type="text" name="list" id="lst">
+        <input type="hidden" name="catagory" id="cat">
+        <input type="hidden" name="list" id="lst">
 
         </div>
          
@@ -132,8 +132,6 @@ $user = $result->fetch_assoc();
             </div>
             <b><label>Would u like to give suggestions</label></b><br>
             <textarea name="suggestion" id="" cols="50" rows="5" maxlength="100" placeholder="suggestion box..." ></textarea>
-            <input type="hidden" name="catagory" id="cat">
-            <input type="hidden" name="list" id="lst">
             <input type="hidden" name="adr">
             <input type="hidden" name="date">
             <?php
