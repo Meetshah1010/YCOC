@@ -24,7 +24,7 @@
                 </div>
             </div>
         </div>
-        <div class="south dishid">
+        <div class="South dishid">
             <div class="btn-group dropright">
                 <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     food-item 

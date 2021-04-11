@@ -167,3 +167,6 @@
     .dishid{
         display:none;
     }
+    .dropdown-item:hover{
+        color: red;
+    }

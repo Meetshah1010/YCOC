@@ -28,7 +28,11 @@ $user = $result->fetch_assoc();
     <link rel="stylesheet" href="dashboard.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-
+<style>
+ .dropdown-item:hover{
+        font-weight:600;
+    }
+</style>
 <body>
     
     <!-- <nav class="navbar navbar-expand-lg" style="border: 1px solid;">
@@ -83,6 +87,7 @@ $user = $result->fetch_assoc();
         <h5>Booking date</h5>
     <input type="date" name="date" id="date">
     </div>
+    <h5>Select Cusine </h5>
         <div class="food">
             <div class="btn-group dropright">
                 <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="catbtn">
@@ -101,16 +106,22 @@ $user = $result->fetch_assoc();
                 </div>
             </div>
         </div>
-        <?php
-        include('dishname.php');
-        ?>
-
+        <div id="pop">
+            </div>
+        <label for="">this below inputs are to be made hidden using display:hidden</label>
         <div class="hiddeninputs">
         <input type="text" name="catagory" id="cat">
         <input type="text" name="list" id="lst">
 
         </div>
-            
+         
+         
+        
+           
+        
+        
+        
+        
         <div class="gender">
             <h2>please select cook gender:-</h2>
             <input type="radio" id="male" name="gender" value="male">
