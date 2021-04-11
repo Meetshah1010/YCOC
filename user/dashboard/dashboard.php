@@ -107,7 +107,6 @@ $user = $result->fetch_assoc();
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
         <div id="pop">
             </div>
         <label for="">this below inputs are to be made hidden using display:hidden</label>
@@ -124,16 +123,6 @@ $user = $result->fetch_assoc();
         
         
         
-=======
-        <?php
-        include('dishname.php');
-        ?>
-
-       
-           
-
-            
->>>>>>> e3a92a61070725f9e6e1af8b08cfcc1fd3f0206c
         <div class="gender">
             <h2>please select cook gender:-</h2>
             <input type="radio" id="male" name="gender" value="male">
