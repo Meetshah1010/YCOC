@@ -57,7 +57,6 @@ else
                 <?php
                 date_default_timezone_set('Asia/Kolkata');
                     $current_hour = date("H");
-                    echo $current_hour;
                     $current_date = date("d");
                     if($resultorder->num_rows>0){
                         while($order = $resultorder->fetch_assoc())
@@ -66,22 +65,34 @@ else
                             $date = DateTime::createFromFormat("Y-m-d", $string);
                             $order_date = $date->format("d");
                             if($order_date==$current_date)
-                            {
+                            {   
                                 $string2=strtotime($order['time']);
                                 $order_time =  date('H',$string2);
                                 $spare_time = $order_time-$current_hour;
-                                echo $order_time;
-                                echo $current_hour;
-                                echo $spare_time;
-                                if($spare_time<=1)
+                                if($spare_time<=1 && $spare_time>=0)
                                 {
-                                    echo "busy";
                                     $sql = "UPDATE `cook` SET `available` = '1' WHERE `cook`.`cid` = '$cid'";
+                                    if($conn->query($sql)==TRUE)
+                                    {
+                                        
+                                        $oid = $order['oid'];
+                                    }
+                                    else{
+                                        echo "";
+                                    }
                                 }
                                 else
                                 {
                                     $sql = "UPDATE `cook` SET `available` = '0' WHERE `cook`.`cid` = '$cid'";
-                                    echo "free";
+                                    if($conn->query($sql)==TRUE)
+                                    {
+                                        echo "";
+                                        break;
+                                    }
+                                    else{
+                                        echo "";
+                                    }
+
                                 }
                             }
                             else
@@ -95,7 +106,7 @@ else
                         echo '<p>You are Free</p>';
                     }
                     else{
-                        echo '<p style="color:red">You have to  order </p>';
+                        echo '<p style="color:red;font-weight:bold;">You have to  order '.$oid.' </p>';
                     }
                 ?>
                 </li>
@@ -124,7 +135,7 @@ else
                                   <h4 class="card-title"><?php
                                   echo $number;
                                   ?></h4>
-                                  <a class="btn text-white" href="../requests/requests.php">View</a>
+                                  <a class="btn text-white" href="../calls/calls.php">View</a>
                               </div>
                           </div>
                           <div class="col-sm-4">
