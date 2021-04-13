@@ -1,0 +1,66 @@
+body {
+  font-family: "PT Sans", sans-serif;
+}
+
+:root {
+  --order-box: rgba(190, 190, 190, 0.959);
+}
+
+.container {
+}
+
+.hisbox {
+  display: grid;
+  border: 1px solid var(--order-box);
+  border-top: 0.1px solid var(--order-box);
+  border-radius: 6px;
+  box-shadow: 0.6px 1.2px 1px var(--order-box);
+  grid-row-gap: 10px;
+  color: #50585f;
+}
+
+.dp {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.subdiv {
+  display: grid;
+  grid-template-columns: 40% auto 40%;
+  margin: 5px 20px;
+  border-bottom: 1.5px solid #d0d8e0e0;
+  padding-bottom: 10px;
+  /* box-shadow: 1px 1px 1px  var(--order-box); */
+}
+
+.first {
+  display: grid;
+  grid-template-columns: 22% 47%;
+}
+
+.second {
+  grid-column-start: 3;
+  justify-self: end;
+  justify-items: start;
+  align-self: start;
+}
+
+strong {
+  color: black;
+  font-weight: bold;
+  font-size: large;
+}
+
+#ratingbox {
+  border: 1px solid;
+  padding: 0px 5px;
+  border-radius: 16px;
+  background: rgb(207 162 62 / 45%);
+  color: green;
+}
+.topbar > img {
+  display: inline-block;
+  height: 50px;
+  width: auto;
+}
