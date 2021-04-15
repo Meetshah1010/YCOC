@@ -56,9 +56,17 @@ else
                     <div class="mt-3">
                         <?php
                         echo '<h4>'.$cook['cname'].'</h4>';
-                        ?>
-                      <h6><img src="https://img.icons8.com/fluent/20/000000/star.png"/> Ratings : 4.5</h6>
-                      <?php
+                        $sql = "SELECT ratings FROM o_details WHERE cid = '".$cook['cid']."'";
+                        $result = $conn->query($sql);
+                        $sum = 0;
+                        $count = 0;
+                        while($order = $result->fetch_assoc()){
+                          $sum = $sum + $order['ratings'];
+                          $count = $count+1;
+                        }
+                        $average = $sum/$count;
+                       echo ' 
+                      <h6><img src="https://img.icons8.com/fluent/20/000000/star.png"/> Ratings : '.$average.'</h6>';
                       echo '<p class="text-muted font-size-sm">'.$cook['carea'].'</p>';
                       echo '<form action="../updatedetails/details.php" method="POST" class="d-inline mr-3">';
 								echo '<input type="hidden" name="id" value='.$cook['cid'].'><button class="btn btn-primary"name="editc" value="Edit">Update';

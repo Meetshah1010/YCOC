@@ -115,6 +115,20 @@ else
                 </li>
             </ul>
           </nav>
+          <?php
+          /*
+          date_default_timezone_set('Asia/Kolkata');
+          $current_month = date("m");
+          $current_year = date("Y");
+          echo $current_year;
+          echo $current_month;
+          $sql = "SELECT join_time FROM cook WHERE cid = '$cid'";
+          $result=$conn->query($sql);
+          $jdate = $result->fetch_assoc();
+          $dateValue = DateTime::createFromFormat('Y-m-d',$jdate); 
+          $yr = date("Y", $dateValue); 
+          echo $yr;*/
+          ?>
           <div class="container-fluid" style=""></div>
               <div class="row"><!-- start  row-->
                   <nav class="col-sm-2 sidebar" style="background-color:#D4E8FF"><!-- start side bar 1st column-->

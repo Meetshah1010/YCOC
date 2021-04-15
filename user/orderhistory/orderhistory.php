@@ -165,7 +165,7 @@ if($result->num_rows>0){
       <div class="cost" style="margin:5px 0px;">Item cost <br><strong><span>&#8377;</span>' . $dish['dish_price'] . '</strong></div>
     </div>
     <div class="subdiv" style="border:none">
-      <div class="delivered">Prepared with <i class="bi bi-heart-fill" style="color:red;"></i> <span id=ratingbox>5<span>&#9733</span></span></div>
+      <div class="delivered">Prepared with <i class="bi bi-heart-fill" style="color:red;"></i> <span id=ratingbox>'.$order['ratings'].'<span>&#9733</span></span></div>
         <div class="second white"><i class="bi bi-check2-circle white"></i>completed</div>
       </div>
     </div>';
