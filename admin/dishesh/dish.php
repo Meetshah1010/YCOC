@@ -9,17 +9,9 @@ else
 {
     echo "<script> location.href='../login/login.php'</script>";
 }
-$sql = "SELECT * FROM cook_request";
+$sql = "SELECT * FROM dish_data";
 $result = $conn->query($sql);
-$cookreq = $result->num_rows;
-
-$sql = "SELECT * FROm cook";
-$result = $conn->query($sql);
-$cooks = $result->num_rows;
-
-$sql = "SELECT * FROM register";
-$result = $conn->query($sql);
-$customers = $result->num_rows;
+$dish = $result->num_rows;
 ?>
 <!DOCTYPE html>
 <html>
@@ -48,10 +40,10 @@ $customers = $result->num_rows;
                   <nav class="col-sm-2 bg-light sidebar py-2"><!-- start side bar 1st column-->
                       <div class="sidebar-sticky">
                           <ul class="nav flex-column" style="font-weight: bold;">
-                              <li class="nav-item" ><a class="nav-link bg-danger" style="color: white;" href="dashboard.php"><img src="https://img.icons8.com/metro/24/000000/dashboard.png"/> Dashboard </a></li>
+                              <li class="nav-item" ><a class="nav-link " href="../dashboard/dashboard.php"><img src="https://img.icons8.com/metro/24/000000/dashboard.png"/> Dashboard </a></li>
                               <li class="nav-item"><a class="nav-link" href="../requests/requests.php"><img src="https://img.icons8.com/material-sharp/24/000000/code-fork.png"/> Requests </a></li>
                               <li class="nav-item"><a class="nav-link" href="../cook/cook.php"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/chef-hat.png"/> Chef </a></li>
-                              <li class="nav-item"><a class="nav-link" href="../dishesh/dish.php"><img src="https://img.icons8.com/wired/24/000000/paella.png"/> Dishesh </a></li>
+                              <li class="nav-item bg-danger" style="color: white;"><a class="nav-link" href="../dishesh/dish.php"><img src="https://img.icons8.com/wired/24/000000/paella.png"/> Dishesh </a></li>
                               <li class="nav-item"><a class="nav-link" href="workreport.php"><img src="https://img.icons8.com/material-rounded/24/000000/business-report.png"/> Work Report</a></li>
                               <li class="nav-item"><a class="nav-link" href="../changepassword.php"><img src="https://img.icons8.com/android/24/000000/key.png"/>Change Password</a></li>
                               <li class="nav-item"><a class="nav-link" href="../logout.php"><img src="https://img.icons8.com/metro/24/000000/export.png"/> Log Out</a></li>
@@ -59,58 +51,33 @@ $customers = $result->num_rows;
                       </div>
                   </nav><!-- end side bar 1st column-->
                   <div class="col-sm-9 col-md-10"><!-- start od dashboard-->
-                      <div class="row text-center mx-5">
-                          <div class="col-sm-4">
-                              <div class="card text-white bg-danger mb-3">
-                                  <div class="card-header"> Request Recieved</div>
-                                  <div class="card-body"></div>
-                                  <h4 class="card-title"><?php echo $cookreq;?></h4>
-                                  <a class="btn text-white" href="../requests/requests.php">View</a>
-                              </div>
-                          </div>
-                          <div class="col-sm-4">
-                              <div class="card text-white bg-primary mb-3">
-                                  <div class="card-header">No. of Cooks</div>
-                                  <div class="card-body"></div>
-                                  <h4 class="card-title"><?php echo $cooks;?></h4>
-                                  <a class="btn text-white" href="../cook/cook.php">View</a>
-                              </div>
-                          </div>
-                          <div class="col-sm-4">
-                              <div class="card text-white bg-success mb-3">
-                                  <div class="card-header">Happy customers</div>
-                                  <div class="card-body"></div>
-                                  <h4 class="card-title"><?php echo $customers;?></h4>
-                                  <a class="btn text-white" href="workorder.php">View</a>
-                              </div>
-                          </div>
-                      </div>	
-                      <div class="mx-5 mt-5 text-center">
-                          <p class="bg-dark text-white">List of Requesters</p>
                       <?php
-                          $sql = "SELECT * FROM cook_request ";
+                          $sql = "SELECT * FROM dish_data ";
                           $result = $conn->query($sql);
                           if($result->num_rows > 0)
                           {
                               echo'<table class="table">
                                   <thead>
                                       <tr>
-                                          <th scope="col">Requester ID</th>
-                                          <th scope="col">Name</th>
-                                          <th scope="col">Email</th>
+                                          <th scope="col">Dish ID</th>
+                                          <th scope="col">Dish Name</th>
+                                          <th scope="col">Price</th>
+                                          <th scope="col">Action</th>
                                       </tr>
                                   </thead>
                                   <tbody>';
                                   while ($row = $result->fetch_assoc())
                                    {
                                   echo'<tr>';
-                                          echo '<td>'.$row["crid"].'</td>';
-                                          echo '<td>'.$row["crname"].'</td>';
-                                          echo '<td>'.$row["cremail"].'</td>';
+                                          echo '<td>'.$row["dish_id"].'</td>';
+                                          echo '<td>'.$row["dish_name"].'</td>';
+                                          echo '<td>'.$row["dish_price"].'</td>';
+                                          echo '<td></td>';
                                   echo'</tr>';
                                   }
                                   echo '</tbody>
                               </table>';
+                              echo '<a class="primary" href="#" data-toggle="modal" data-target="#exampleModal"><img style="float:right;" src="https://img.icons8.com/pastel-glyph/64/000000/plus--v1.png"/></a>';
                           }
                           else
                           {
@@ -121,7 +88,57 @@ $customers = $result->num_rows;
                   </div>
                   <!--  end profile area 2nd column-->
               </div><!-- end row-->
-          </div><!--end container-->
+          </div><!--end container-->   
+          <!-- modal dialogbox -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add the Dish</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <label class="control-label">Dish Name</label>
+                            <input required type="text" class="form-control input-lg" name="dname">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Price</label>
+                            <input required type="text" class="form-control input-lg" name="dprice">
+                    </div>
+                    <div class="form-group">
+                        <button  name="add" type="submit">Add</button>
+                    </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <?php
+      if(isset($_REQUEST['add']))
+      {
+        $dname = $_REQUEST['dname'];  
+        $dprice = $_REQUEST['dprice'];
+        $sql ="INSERT INTO `dish_data` ( `dish_name`, `dish_price`) VALUES ('$dname', '$dprice');";
+          if($conn->query($sql)==TRUE)
+          {
+            echo '<meta http-equiv="refresh" content="0">';
+          }
+          else{
+              echo '<script>window.alert("Unable to update")</script>';
+          }
+      }
+      ?>
+          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+        </script>
           <script src="../../assets/js/jquery.min.js"></script>
           <script src="../../assets/js/popper.min.js"></script>
           <script src="../../assets/js/bootstrap.min.js"></script>

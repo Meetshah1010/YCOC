@@ -82,6 +82,9 @@ $user = $result->fetch_assoc();
         $sql3= "SELECT * FROM images WHERE id = '".$order['cid']."'";
         $result3 = $conn->query($sql3);
         $img = $result3->fetch_assoc();
+        $sql4 = "SELECT * FROM dish_data WHERE dish_name = '".$order['dish_name']."'";
+        $result4 = $conn->query($sql4);
+        $dish = $result4->fetch_assoc();
         echo '
         <div class="hisbox">
           <div class="subdiv">
@@ -103,7 +106,7 @@ $user = $result->fetch_assoc();
             <div class="address">Address <br><strong>'.$order['address'].'</strong></div>
             <div class="ckcontact">cook contact no<br><strong>'.$order['cmob'].'</strong></div>
             <div class="bookslot" style="justify-self: end;">booked-slot<br><strong>'.$starting_order_hour.':'.$starting_order_minute.'- '.$closing_order_hour.':'.$starting_order_minute.'</strong> </div>
-            <div class="cost" style="margin:5px 0px;">Item cost <br><strong><span>&#8377;</span>100.00</strong></div>
+            <div class="cost" style="margin:5px 0px;">Item cost <br><strong><span>&#8377;</span>'.$dish['dish_price'].'</strong></div>
           </div>
           <div class="subdiv" style="border:none">
             <div class="delivered">Prepared with <i class="bi bi-heart-fill" style="color: red;"></i> <span
