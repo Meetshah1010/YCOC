@@ -83,14 +83,13 @@ $user = $result->fetch_assoc();
         <form action="../orderprocess/orderprocess.php" method="POST">
             <div>
                 <h5><span class="material-icons-outlined">
-                        $#e88a
                     </span>Address</h5>
-                <input type="text" name="address" id="address" placeholder="venue Address">
+                <input type="text" required name="address" id="address" placeholder="venue Address">
             </div>
             <div>
                 <h5>Booking date</h5>
-                <input type="date" name="odate" id="date">
-                <input type="time" name="otime" id="otime">
+                <input required type="date" name="odate" id="date">
+                <input required type="time" name="otime" id="otime">
             </div>
             <h5>Select Cusine </h5>
             <div class="food">
@@ -112,33 +111,24 @@ $user = $result->fetch_assoc();
             </div>
             <div id="pop">
             </div>
-            <label for="">this below inputs are to be made hidden using display:hidden</label>
             <div class="hiddeninputs">
-                <input type="hidden" name="catagory" id="cat">
-                <input type="hidden" name="list" id="lst">
+                <input required type="hidden" name="catagory" id="cat">
+                <input required type="hidden" name="list" id="lst">
 
             </div>
-
-
-
-
-
-
-
-
             <div class="gender">
                 <h2>please select cook gender:-</h2>
-                <input type="radio" id="male" name="gender" value="male">
+                <input required type="radio" id="male" name="gender" value="male">
                 <label for="male">Male</label><br>
-                <input type="radio" id="female" name="gender" value="female">
+                <input required type="radio" id="female" name="gender" value="female">
                 <label for="female">Female</label><br>
             </div>
             <b><label>Would u like to give suggestions</label></b><br>
             <textarea name="suggestion" id="" cols="50" rows="5" maxlength="100" placeholder="suggestion box..."></textarea>
-            <input type="hidden" name="adr">
-            <input type="hidden" name="date">
+            <input required type="hidden" name="adr">
+            <input required type="hidden" name="date">
             <?php
-            echo '<input type="hidden" value="' . $user['id'] . '" name="uid">';
+            echo '<input required type="hidden" value="' . $user['id'] . '" name="uid">';
             ?><br>
             <input type="submit" value="Submit">
         </form>

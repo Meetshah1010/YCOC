@@ -12,9 +12,12 @@ if(isset($_SESSION['is_cooklogin']))
     $img = "SELECT * FROM images WHERE mail='$cemail'";
     $res=$conn->query($img);
     $image=$res->fetch_assoc();
-    $sql = "SELECT * FROM o_details WHERE cid = $cook[cid]";
+    $sql = "SELECT * FROM o_details WHERE cid = $cook[cid] AND completed = '0'";
     $resultorder=$conn->query($sql);
     $number = $resultorder->num_rows;
+    $sql = "SELECT * FROM o_details WHERE cid = $cook[cid] AND completed = '1'";
+    $result=$conn->query($sql);
+    $completedorder = $result->num_rows;
 }
 else
 {
@@ -142,7 +145,7 @@ else
                               <div class="card text-white bg-success mb-3">
                                   <div class="card-header">No. of Success Orders</div>
                                   <div class="card-body"></div>
-                                  <h4 class="card-title"><?php echo'2'?></h4>
+                                  <h4 class="card-title"><?php echo $completedorder?></h4>
                                   <a class="btn text-white" href="../cook/cook.php">View</a>
                               </div>
                           </div>
