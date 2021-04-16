@@ -23,6 +23,29 @@ else
 {
     echo "<script> location.href='../login/login.php'</script>";
 }
+if(isset($_REQUEST['update']))
+{
+	if($_REQUEST['apass'] == "")
+	{
+		$msg = '<div class="alert alert-warning col-sm-6 mt-3" role="alert">All fields are required</div>';
+	}
+	else
+	{
+	$rpass = $_REQUEST['apass'];
+	$sql = "UPDATE cook SET cpass = '$rpass' WHERE  cemail  = '$cid'";
+		if($conn->query($sql) == TRUE)
+		{
+			$msg = '<div class="alert alert-success col-sm-6 mt-3"role="alert">Successfully updated </div>';
+			echo '<script>window.alert("Updated successfully")</script>';
+			echo '<script>location.href="../login/login.php"</script>';
+			session_destroy();
+		}
+		else
+		{
+			$msg = '<div class="alert alert-danger col-sm-6 mt-3"role="alert">Unable to  updated </div>';	
+		}
+	}
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -139,84 +162,38 @@ else
               <nav class="col-sm-2 sidebar" style="background-color:#D4E8FF"><!-- start side bar 1st column-->
                       <div class="sidebar-sticky">
                           <ul class="nav flex-column" style="font-weight: bold;">
-                              <li class="nav-item" ><a class="nav-link bg-primary" style="color: white;" style="color:black;" href="../dashboard/dashboard.php"><img src="https://img.icons8.com/metro/24/000000/dashboard.png"/> Dashboard </a></li>
+                              <li class="nav-item" ><a class="nav-link " style="color:black;" href="../dashboard/dashboard.php"><img src="https://img.icons8.com/metro/24/000000/dashboard.png"/> Dashboard </a></li>
                               <li class="nav-item"><a class="nav-link" style="color: black;" href="../profile/profile.php"><img src="https://img.icons8.com/small/24/000000/gender-neutral-user.png"/> Profile </a></li>
                               <li class="nav-item"><a class="nav-link" style="color:black;" href="../calls/calls.php"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/chef-hat.png"/> Calls </a></li>
                               <li class="nav-item"><a class="nav-link " style="color:black;"  href="../workreport/workreport.php"><img src="https://img.icons8.com/material-rounded/24/000000/business-report.png"/> Work Report</a></li>
-                              <li class="nav-item"><a class="nav-link" style="color: black;" href="../changepassword/changepassword.php"><img src="https://img.icons8.com/android/24/000000/key.png"/>Change Password</a></li>
+                              <li class="nav-item"><a class="nav-link bg-primary" style="color: white;" style="color: black;" href="../changepassword/changepassword.php"><img src="https://img.icons8.com/android/24/000000/key.png"/>Change Password</a></li>
                               <li class="nav-item"><a class="nav-link"  style="color: black;" href="../logout.php"><img src="https://img.icons8.com/metro/24/000000/export.png"/> Log Out</a></li>
                           </ul>
                       </div>
                   </nav><!-- end side bar 1st column-->
-                  <div class="col-sm-9"><!-- start od dashboard-->
-                      <div class="row text-center mx-5">
-                          <div class="col-sm-4">
-                              <div class="card text-white bg-warning mb-3">
-                                  <div class="card-header"> Notifications </div>
-                                  <div class="card-body"></div>
-                                  <h4 class="card-title"><?php
-                                  echo $number;
-                                  ?></h4>
-                                  <a class="btn text-white" href="../calls/calls.php">View</a>
-                              </div>
-                          </div>
-                          <div class="col-sm-4">
-                              <div class="card text-white bg-success mb-3">
-                                  <div class="card-header">No. of Success Orders</div>
-                                  <div class="card-body"></div>
-                                  <h4 class="card-title"><?php echo $completedorder?></h4>
-                                  <a class="btn text-white" href="../cook/cook.php">View</a>
-                              </div>
-                          </div>
-                          <div class="col-sm-4">
-                              <div class="card text-white bg-info mb-3">
-                                  <div class="card-header">Happy months with YCOC</div>
-                                  <div class="card-body"></div>
-                                  <h4 class="card-title"><?php echo $journey?></h4>
-                                  <a class="btn text-white" href="workorder.php">View</a>
-                              </div>
-                          </div>
-                      </div>	
-                      <div class="mx-5 mt-5 text-center">
-                          <p class="bg-dark text-white">List of Calls</p>
-                          <?php
-                          if($resultorder->num_rows>0)
-                          {
-                            echo'<table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Order ID</th>
-                                    <th scope="col">Dish Name</th>
-                                    <th scope="col">Address</th>
-                                    <th scope="col">Call Date</th>
-                                    <th scope="col">Call Time</th>
-                                </tr>
-                            </thead>
-                            <tbody>';
-                            $sql = "SELECT * FROM o_details WHERE cid = $cook[cid]";
-                            $result=$conn->query($sql);
-                            while ($order = $result->fetch_assoc())
-                             {
-                            echo'<tr>';
-                                    echo '<td>'.$order["oid"].'</td>';
-                                    echo '<td>'.$order["dish_name"].'</td>';
-                                    echo '<td>'.$order["address"].'</td>';
-                                    echo '<td>'.$order["date"].'</td>';
-                                    echo '<td>'.$order["time"].'</td>';
-                            echo'</tr>';
-                            }
-                            echo '</tbody>
-                        </table>';
-                    }
-                    else
-                    {
-                        echo '0 Results'; 
-                    }
-                          ?>
-                      </div>		
-                  </div>
-                  <!--  end profile area 2nd column-->
-              </div><!-- end row-->
+				  <div class="col-sm-6"><!--  end profile area 2nd column-->
+			<form action="" method="POST" style="margin-top: 2;" class="mx-5">
+				<div class="form-group">
+					<label>E-mail</label><br>
+					<input type="email" name="aemail"  class="form-control" value="<?php echo $cemail ?>" readonly>
+				</div>
+				<div class="form-group">
+					<label>New Password</label><br>
+					<input type="password" name="apass" class="form-control" placeholder="New Password">
+				</div>
+				<button type="submit" name="update" class="btn btn-danger" >Update</button>
+				<button class="btn btn-dark" type="submit" style="margin-left: 10px;">Reset</button>
+				<?php 
+				if(isset($msg))
+				{
+					echo $msg;
+				}
+				?>
+			</form>
+
+		</div>
+
+				  </div><!-- end row-->
           </div><!--end container-->
           <script src="../../assets/js/jquery.min.js"></script>
           <script src="../../assets/js/popper.min.js"></script>

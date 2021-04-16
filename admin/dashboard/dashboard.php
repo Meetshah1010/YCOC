@@ -45,16 +45,16 @@ $customers = $result->num_rows;
           <!-- start container -->
           <div class="container-fluid" style="margin-top: 40px;"></div>
               <div class="row"><!-- start  row-->
-                  <nav class="col-sm-2 bg-light sidebar py-2"><!-- start side bar 1st column-->
+              <nav class="col-sm-2 bg-light sidebar py-2"><!-- start side bar 1st column-->
                       <div class="sidebar-sticky">
                           <ul class="nav flex-column" style="font-weight: bold;">
-                              <li class="nav-item" ><a class="nav-link bg-danger" style="color: white;" href="dashboard.php"><img src="https://img.icons8.com/metro/24/000000/dashboard.png"/> Dashboard </a></li>
-                              <li class="nav-item"><a class="nav-link" href="../requests/requests.php"><img src="https://img.icons8.com/material-sharp/24/000000/code-fork.png"/> Requests </a></li>
-                              <li class="nav-item"><a class="nav-link" href="../cook/cook.php"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/chef-hat.png"/> Chef </a></li>
-                              <li class="nav-item"><a class="nav-link" href="../dishesh/dish.php"><img src="https://img.icons8.com/wired/24/000000/paella.png"/> Dishesh </a></li>
-                              <li class="nav-item"><a class="nav-link" href="workreport.php"><img src="https://img.icons8.com/material-rounded/24/000000/business-report.png"/> Work Report</a></li>
-                              <li class="nav-item"><a class="nav-link" href="../changepassword.php"><img src="https://img.icons8.com/android/24/000000/key.png"/>Change Password</a></li>
-                              <li class="nav-item"><a class="nav-link" href="../logout.php"><img src="https://img.icons8.com/metro/24/000000/export.png"/> Log Out</a></li>
+                              <li class="nav-item" ><a class="nav-link bg-danger" style="color: white; " style="color:black;" href="../dashboard/dashboard.php"><img src="https://img.icons8.com/metro/24/000000/dashboard.png"/> Dashboard </a></li>
+                              <li class="nav-item"><a class="nav-link" style="color:black;" href="../requests/requests.php"><img src="https://img.icons8.com/material-sharp/24/000000/code-fork.png"/> Requests </a></li>
+                              <li class="nav-item"><a class="nav-link " style="color:black;" href="../cook/cook.php"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/chef-hat.png"/> Chef </a></li>
+                              <li class="nav-item"><a class="nav-link" style="color:black;" href="../dishesh/dish.php"><img src="https://img.icons8.com/wired/24/000000/paella.png"/> Dishesh </a></li>
+                              <li class="nav-item"><a class="nav-link " style="color:black;" href="../workreport/workreport.php"><img src="https://img.icons8.com/material-rounded/24/000000/business-report.png"/> Work Report</a></li>
+                              <li class="nav-item"><a class="nav-link" style="color:black;" href="../changepassword.php"><img src="https://img.icons8.com/android/24/000000/key.png"/>Change Password</a></li>
+                              <li class="nav-item"><a class="nav-link" style="color:black;" href="../logout.php"><img src="https://img.icons8.com/metro/24/000000/export.png"/> Log Out</a></li>
                           </ul>
                       </div>
                   </nav><!-- end side bar 1st column-->

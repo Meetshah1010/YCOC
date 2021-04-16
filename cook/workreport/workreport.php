@@ -28,10 +28,9 @@ else
 <html>
     <head>
         <title>
-            Cook Panel
+            Work Report
         </title>
         <meta charset="utf-8">
-        <meta http-equiv="refresh" content="10">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet"  href="../../assets/css/bootstrap.min.css">
@@ -41,6 +40,17 @@ else
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="dashboard.css">
     </head> 
+    <script>
+    function print(){
+        var prtContent = document.getElementById("print");
+        var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+WinPrint.document.write(prtContent.innerHTML);
+WinPrint.document.close();
+WinPrint.focus();
+WinPrint.print();
+WinPrint.close();
+    }
+    </script>
     <body>
         <nav class="navbar navbar-expand-lg " style="background-color:#22AFF1">
             <a class="navbar-brand" style="color:black;" href="../../landing/landing.html"><b>YCOC</b></a>
@@ -115,106 +125,84 @@ else
                 </li>
             </ul>
           </nav>
-          <?php
-          $string = $cook['join_date'];
-          $date = DateTime::createFromFormat("Y-m-d", $string);
-          $join_year = $date->format("Y");
-          $join_month = $date->format("m");
-          date_default_timezone_set('Asia/Kolkata');
-          $current_year = date("Y");
-          $current_month = date("m");
-          if($current_year==$join_year)
-          {
-              $journey = $current_month-$join_month;
-          }
-          else{
-              $since_year = $current_year-$join_year;
-              $years = $since_year*12;
-              $since_month = $current_month-$join_month;
-              $journey = $since_month+$years;
-          }
-          ?>
           <div class="container-fluid" style=""></div>
               <div class="row"><!-- start  row-->
-              <nav class="col-sm-2 sidebar" style="background-color:#D4E8FF"><!-- start side bar 1st column-->
+                  <nav class="col-sm-2 sidebar" style="background-color:#D4E8FF"><!-- start side bar 1st column-->
                       <div class="sidebar-sticky">
                           <ul class="nav flex-column" style="font-weight: bold;">
-                              <li class="nav-item" ><a class="nav-link bg-primary" style="color: white;" style="color:black;" href="../dashboard/dashboard.php"><img src="https://img.icons8.com/metro/24/000000/dashboard.png"/> Dashboard </a></li>
+                              <li class="nav-item" ><a class="nav-link " style="color:black;" href="../dashboard/dashboard.php"><img src="https://img.icons8.com/metro/24/000000/dashboard.png"/> Dashboard </a></li>
                               <li class="nav-item"><a class="nav-link" style="color: black;" href="../profile/profile.php"><img src="https://img.icons8.com/small/24/000000/gender-neutral-user.png"/> Profile </a></li>
                               <li class="nav-item"><a class="nav-link" style="color:black;" href="../calls/calls.php"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/chef-hat.png"/> Calls </a></li>
-                              <li class="nav-item"><a class="nav-link " style="color:black;"  href="../workreport/workreport.php"><img src="https://img.icons8.com/material-rounded/24/000000/business-report.png"/> Work Report</a></li>
+                              <li class="nav-item"><a class="nav-link bg-primary" style="color: white;"  href="../workreport/workreport.php"><img src="https://img.icons8.com/material-rounded/24/000000/business-report.png"/> Work Report</a></li>
                               <li class="nav-item"><a class="nav-link" style="color: black;" href="../changepassword/changepassword.php"><img src="https://img.icons8.com/android/24/000000/key.png"/>Change Password</a></li>
                               <li class="nav-item"><a class="nav-link"  style="color: black;" href="../logout.php"><img src="https://img.icons8.com/metro/24/000000/export.png"/> Log Out</a></li>
                           </ul>
                       </div>
                   </nav><!-- end side bar 1st column-->
-                  <div class="col-sm-9"><!-- start od dashboard-->
-                      <div class="row text-center mx-5">
-                          <div class="col-sm-4">
-                              <div class="card text-white bg-warning mb-3">
-                                  <div class="card-header"> Notifications </div>
-                                  <div class="card-body"></div>
-                                  <h4 class="card-title"><?php
-                                  echo $number;
-                                  ?></h4>
-                                  <a class="btn text-white" href="../calls/calls.php">View</a>
-                              </div>
-                          </div>
-                          <div class="col-sm-4">
-                              <div class="card text-white bg-success mb-3">
-                                  <div class="card-header">No. of Success Orders</div>
-                                  <div class="card-body"></div>
-                                  <h4 class="card-title"><?php echo $completedorder?></h4>
-                                  <a class="btn text-white" href="../cook/cook.php">View</a>
-                              </div>
-                          </div>
-                          <div class="col-sm-4">
-                              <div class="card text-white bg-info mb-3">
-                                  <div class="card-header">Happy months with YCOC</div>
-                                  <div class="card-body"></div>
-                                  <h4 class="card-title"><?php echo $journey?></h4>
-                                  <a class="btn text-white" href="workorder.php">View</a>
-                              </div>
-                          </div>
-                      </div>	
-                      <div class="mx-5 mt-5 text-center">
-                          <p class="bg-dark text-white">List of Calls</p>
-                          <?php
-                          if($resultorder->num_rows>0)
-                          {
-                            echo'<table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Order ID</th>
-                                    <th scope="col">Dish Name</th>
-                                    <th scope="col">Address</th>
-                                    <th scope="col">Call Date</th>
-                                    <th scope="col">Call Time</th>
-                                </tr>
-                            </thead>
-                            <tbody>';
-                            $sql = "SELECT * FROM o_details WHERE cid = $cook[cid]";
-                            $result=$conn->query($sql);
-                            while ($order = $result->fetch_assoc())
-                             {
-                            echo'<tr>';
-                                    echo '<td>'.$order["oid"].'</td>';
-                                    echo '<td>'.$order["dish_name"].'</td>';
-                                    echo '<td>'.$order["address"].'</td>';
-                                    echo '<td>'.$order["date"].'</td>';
-                                    echo '<td>'.$order["time"].'</td>';
-                            echo'</tr>';
-                            }
-                            echo '</tbody>
-                        </table>';
-                    }
-                    else
-                    {
-                        echo '0 Results'; 
-                    }
-                          ?>
-                      </div>		
-                  </div>
+                  <div class="col-sm-9 col-md-9 text-center">
+			<form action="" method="POST" class="d-print-none">
+				<div class="form-row">
+					<div class="form-group col-md-3">
+						<input type="date" name="startdate" class="form-control" id="startdate">
+					</div><span> to </span>
+					<div class="form-group col-md-3">
+						<input type="date" name="enddate" class="form-control" id="enddate">
+					</div>
+					<div class="form-group col-md-3">
+						<input type="submit" name="searchsubmit" class="btn btn-secondary" value="Search">
+					</div>
+				</div>
+			</form>
+            <div id = "print">
+            <?php
+			if(isset($_REQUEST['searchsubmit']))
+			{
+					$startdate = $_REQUEST['startdate'];
+					$enddate = $_REQUEST['enddate'];
+					$sql = "SELECT * FROM o_details WHERE `date` BETWEEN '$startdate' AND '$enddate' AND cid = '$cid' AND completed='1'";
+					$result = $conn->query($sql);
+					if($result->num_rows > 0)
+					{
+                        echo '<p class="bg-dark text-white">Details</p>';
+						echo '<table class="table">';
+							echo '<thead>';
+								echo '<tr>';
+									echo '<th scope="col">Order ID</th>';
+									echo '<th scope="col">Dish Name</th>';
+									echo '<th scope="col">Date</th>';
+									echo '<th scope="col">Time</th>';
+									echo '<th scope="col">Ratings</th>';
+									echo '<th scope="col">Address</th>';
+								echo '</tr>';
+							echo '</thead>';
+							echo '<tbody>';
+							while($row=$result->fetch_assoc())
+							{
+								echo '<tr>';
+									echo '<td>'.$row['oid'].'</td>';
+									echo '<td>'.$row['dish_name'].'</td>';
+									echo '<td>'.$row['date'].'</td>';
+									echo '<td>'.$row['time'].'</td>';
+									echo '<td>'.$row['ratings'].'</td>';
+									echo '<td>'.$row['address'].'</td>';
+								echo '</tr>';
+							}
+							echo '<tr>';
+								echo '<td>';
+									echo '<button  class="btn btn-danger d-print-none" onClick="print()">Print</button>';
+								echo '</td>';
+							echo '</tr>';
+							echo '</tbody>';
+						echo '</table>';
+					}
+					else
+					{
+						echo "<div class='alert alert-warning col-sm-6 ml-5 mt-2' role='alert'>No Resords Found</div>";
+					}
+			}
+			?>
+            </div>
+            </div>
                   <!--  end profile area 2nd column-->
               </div><!-- end row-->
           </div><!--end container-->
@@ -224,3 +212,4 @@ else
           <script src="../../assets/js/all.min.css"></script>
     </body>
 </html>
+     

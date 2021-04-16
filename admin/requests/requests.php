@@ -29,19 +29,19 @@ if (isset($_SESSION['is_adminlogin'])) {
 	<div class="container-fluid" style="margin-top: 40px;"></div>
 	<div class="row">
 		<!-- start  row-->
-		<nav class="col-sm-2 bg-light sidebar py-2">
-			<!-- start side bar 1st column-->
-			<div class="sidebar-sticky">
-				<ul class="nav flex-column" style="font-weight: bold;">
-					<li class="nav-item"><a class="nav-link " href="../dashboard/dashboard.php"><img src="https://img.icons8.com/metro/24/000000/dashboard.png" /> Dashboard</a></li>
-					<li class="nav-item"><a class="nav-link bg-danger" href="#"><img src="https://img.icons8.com/material-sharp/24/000000/code-fork.png" />Requests</a></li>
-					<li class="nav-item"><a class="nav-link" href="../cook/cook.php"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/chef-hat.png" /> Chef </a></li>
-					<li class="nav-item"><a class="nav-link" href="workreport.php"><img src="https://img.icons8.com/material-rounded/24/000000/business-report.png" /> Work Report</a></li>
-					<li class="nav-item"><a class="nav-link" href="../changepassword.php"><img src="https://img.icons8.com/android/24/000000/key.png" />Change Password</a></li>
-					<li class="nav-item"><a class="nav-link" href="../logout.php"><img src="https://img.icons8.com/metro/24/000000/export.png" /> Log Out</a></li>
-				</ul>
-			</div>
-		</nav><!-- end side bar 1st column-->
+		<nav class="col-sm-2 bg-light sidebar py-2"><!-- start side bar 1st column-->
+                      <div class="sidebar-sticky">
+                          <ul class="nav flex-column" style="font-weight: bold;">
+                              <li class="nav-item" ><a class="nav-link " style="color:black;" href="../dashboard/dashboard.php"><img src="https://img.icons8.com/metro/24/000000/dashboard.png"/> Dashboard </a></li>
+                              <li class="nav-item"><a class="nav-link bg-danger" style="color: white;" style="color:black;" href="../requests/requests.php"><img src="https://img.icons8.com/material-sharp/24/000000/code-fork.png"/> Requests </a></li>
+                              <li class="nav-item"><a class="nav-link " style="color:black;" href="../cook/cook.php"><img src="https://img.icons8.com/fluent-systems-filled/24/000000/chef-hat.png"/> Chef </a></li>
+                              <li class="nav-item"><a class="nav-link" style="color:black;" href="../dishesh/dish.php"><img src="https://img.icons8.com/wired/24/000000/paella.png"/> Dishesh </a></li>
+                              <li class="nav-item"><a class="nav-link " style="color:black;" href="../workreport/workreport.php"><img src="https://img.icons8.com/material-rounded/24/000000/business-report.png"/> Work Report</a></li>
+                              <li class="nav-item"><a class="nav-link" style="color:black;" href="../changepassword.php"><img src="https://img.icons8.com/android/24/000000/key.png"/>Change Password</a></li>
+                              <li class="nav-item"><a class="nav-link" style="color:black;" href="../logout.php"><img src="https://img.icons8.com/metro/24/000000/export.png"/> Log Out</a></li>
+                          </ul>
+                      </div>
+                  </nav><!-- end side bar 1st column-->
 		<!--  stare  2nd column-->
 		<div class="col-sm-10">
 			<?php
@@ -105,8 +105,7 @@ if (isset($_SESSION['is_adminlogin'])) {
 	<!--  end  2nd column-->
 	<?php
 	if (isset($_POST['Accept'])) {
-		$cid = mt_rand(0, 999);
-		echo $_REQUEST['crname'];
+		
 		$cname = $_REQUEST['crname'];
 		$cmob = $_REQUEST['crmob'];
 		$cemail = $_REQUEST['cremail'];
@@ -115,7 +114,7 @@ if (isset($_SESSION['is_adminlogin'])) {
 		$cgender = $_REQUEST['crgender'];
 		$cspec = $_REQUEST['crspec'];
 		$cpass = $_REQUEST['crpass'];
-		$sql = "INSERT INTO cook(cid,cname,cmob,cemail,carea,cgender,cspec,cpass,caddress) VALUES('$cid','$cname','$cmob','$cemail','$carea','$cgender','$cspec','$cpass','$caddress')";
+		$sql = "INSERT INTO cook(cname,cmob,cemail,carea,cgender,cspec,cpass,caddress) VALUES('$cname','$cmob','$cemail','$carea','$cgender','$cspec','$cpass','$caddress')";
 		if ($conn->query($sql) == TRUE) {
 			$test = "SELECT cid FROM cook WHERE cemail='$cemail'";
 			$result = $conn->query($test);
