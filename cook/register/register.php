@@ -24,7 +24,8 @@ if (isset($_POST["rsignup"])) {
 					$img = "INSERT INTO images (id,img,mail) VALUES('$id','$file','$cremail')";
 					if($conn->query($img)==TRUE)
 					{
-						echo "Inserted Successfully";
+						echo '<script>window.alert("Successfully Registreted")</script>';
+						echo '<script>location.href="../login/login.php"</script>';
 					}
 					else 
 					{

@@ -16,8 +16,9 @@ else
 	<title>Requests</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="refresh" content="10">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet"  href="../../css/bootstrap.min.css">
+	<link rel="stylesheet"  href="../../assets/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="requests.css">
 </head>
@@ -135,8 +136,8 @@ else
 						$del = "DELETE FROM cook_request WHERE crid = {$_REQUEST['crid']}";
 						if($conn->query($del)==TRUE)
 						{
-
-							echo "<script>window.alert('Inserted successfully all');</script>";
+							echo '<meta http-equiv="refresh" content="1">';
+							echo '<a id="mail" href="mailto:<?php echo $cemail;<?>">Click here</a>';
 						}
 						else
 						{
@@ -157,7 +158,7 @@ else
 			$delimg = "DELETE FROM images WHERE id = {$_REQUEST['crid']} ";
 			if(($conn->query($del)==TRUE) && ($conn->query($delimg)==TRUE))
 			{
-			echo '<meta http-equiv="refersh" content = "0;URL=?closed"/>';
+			echo '<meta http-equiv="refresh" content="1">';
 			}
 			else
 			{
@@ -169,9 +170,9 @@ else
 		
 	</div><!-- end row-->
 </div><!--end container-->
-<script src="../js/jquery.min.js"></script>
-<script src="../js/popper.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/all.min.css"></script>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/popper.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/all.min.css"></script>
 </body>
 </html>
